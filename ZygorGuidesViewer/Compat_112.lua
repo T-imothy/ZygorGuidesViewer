@@ -12307,3 +12307,49 @@ ZygorClassic_CurrentGoto55=function()
 end
 
 ZYGOR_BACKPORT_VERSION = "TEST332"
+
+-- TEST333: the Gnome 1-13 guide incorrectly used the post-Vanilla
+-- Auberdine-to-Stormwind Harbor route.  In 1.12 the ship lands at Menethil;
+-- continue by flight to Ironforge and the Deeprun Tram.  Preserve an active
+-- TEST332 save at displayed step 165 in Wetlands so it resumes at the new
+-- Menethil flight step.  Saves already beyond the crossing move by the two
+-- newly inserted travel steps.
+if not ZygorClassicGnomeBoatMigration333 then
+    ZygorClassicGnomeBoatMigration333=CreateFrame("Frame","ZygorClassicGnomeBoatMigration333",UIParent)
+    ZygorClassicGnomeBoatMigration333.elapsed=0
+    ZygorClassicGnomeBoatMigration333:SetScript("OnUpdate",function()
+        this.elapsed=(this.elapsed or 0)+(arg1 or 0)
+        if this.elapsed<0.5 then return end
+        this.elapsed=0
+        local key=ZygorClassic_Key62 and ZygorClassic_Key62() or nil
+        local state=key and ZygorClassicDB and ZygorClassicDB.engine172 and ZygorClassicDB.engine172[key]
+        local guides=ZygorGuidesViewer and ZygorGuidesViewer.registeredguides
+        local guide=state and guides and guides[tonumber(state.guide) or 0]
+        if not state or not guide then return end
+        if not state.vanillaGnomeBoat333 then
+            local title=tostring(guide.title or "")
+            if string.find(title,"Gnome (1-13)",1,true) then
+                local oldStep=tonumber(state.step) or 1
+                local zone=GetRealZoneText and GetRealZoneText() or ""
+                if oldStep>165 or (oldStep==165 and zone~="Wetlands") then
+                    state.step=oldStep+2
+                end
+                if tonumber(state.step) then
+                    ZygorClassicStepIndex=tonumber(state.step)
+                    if ZygorClassicDB.smart51 and ZygorClassicDB.smart51[key] then
+                        ZygorClassicDB.smart51[key].step=tonumber(state.step)
+                    end
+                    local char=ZygorClassic_CharDB and ZygorClassic_CharDB()
+                    if char then char.step=tonumber(state.step) end
+                end
+            end
+            state.vanillaGnomeBoat333=true
+        end
+        this:SetScript("OnUpdate",nil)
+        if ZygorClassic_PlayerRender246 then ZygorClassic_PlayerRender246() end
+        if ZygorClassic_Render then ZygorClassic_Render() end
+        if ZygorClassic_UpdateArrow55 then ZygorClassic_UpdateArrow55() end
+    end)
+end
+
+ZYGOR_BACKPORT_VERSION = "TEST333"

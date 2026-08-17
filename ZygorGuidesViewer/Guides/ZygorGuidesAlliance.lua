@@ -2315,14 +2315,21 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Gnome (1-13)"
 		'Hearth to Auberdine|goto Darkshore,37.0,44.1,0.5|use Hearthstone##6948|noway|c
 	step //147
 		goto 32.4,43.8|n
-		'Ride the boat to Stormwind Harbor|goto Stormwind City|noway|c
+		'Ride the boat from Auberdine to Menethil Harbor|goto Wetlands|noway|c
 	step //148
-		'Go outside to Elwynn Forest|goto Elwynn Forest|noway|c
+		goto Wetlands,9.5,59.7
+		.talk Shellei Brondir##1571
+		..'Fly to Ironforge|goto Ironforge|noway|c
 	step //149
+		goto Ironforge,76.9,51.2|n
+		'Ride the Deeprun Tram to Stormwind|goto Stormwind City|noway|c
+	step //150
+		'Go outside to Elwynn Forest|goto Elwynn Forest|noway|c
+	step //151
 		goto Elwynn Forest,42.1,65.9
 		.talk Marshal Dughan##240
 		..accept Report to Gryan Stoutmantle##109
-	step //150
+	step //152
 		'Go southwest to Westfall|goto Westfall|noway|c
 ]])
 ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Dwarf (1-13)",[[

@@ -15,7 +15,7 @@
 ## X-eMail: zygor@zygorguides.com
 ## X-Website: http://zygorguides.com/
 ## X-License: GPL
-## Version: 2.0-classic-backport-test332-single-addon-package
+## Version: 2.0-classic-backport-test333-single-addon-package
 Generated_Vanilla_Manifest.lua
 Generated_Talk_Waypoints.lua
 Compat_112.lua
