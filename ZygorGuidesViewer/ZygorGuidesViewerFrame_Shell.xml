@@ -1,0 +1,40 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+
+    <Frame name="ZygorGuidesViewerFrame" parent="UIParent" hidden="true">
+        <Size>
+            <AbsDimension x="320" y="180"/>
+        </Size>
+        <Anchors>
+            <Anchor point="CENTER"/>
+        </Anchors>
+
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBackdrop" file="Interface\Tooltips\UI-Tooltip-Background">
+                    <Anchors>
+                        <Anchor point="TOPLEFT"/>
+                        <Anchor point="BOTTOMRIGHT"/>
+                    </Anchors>
+                    <Color r="0" g="0" b="0" a="0.75"/>
+                </Texture>
+            </Layer>
+        </Layers>
+
+        <Frames>
+            <Button name="ZygorGuidesViewerFrameCloseButton" parent="ZygorGuidesViewerFrame">
+                <Size><AbsDimension x="24" y="24"/></Size>
+                <Anchors>
+                    <Anchor point="TOPRIGHT">
+                        <Offset><AbsDimension x="-4" y="-4"/></Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>ZygorGuidesViewerFrame:Hide()</OnClick>
+                </Scripts>
+                <NormalText text="X"/>
+            </Button>
+        </Frames>
+    </Frame>
+</Ui>

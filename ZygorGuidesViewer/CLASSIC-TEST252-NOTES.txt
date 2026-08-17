@@ -1,0 +1,8 @@
+Zygor Guides Viewer Classic 1.12 - TEST252
+
+- Adds a player-facing Help window to both the compact tracker and diagnostic
+  window.
+- Explains current-step markers, waypoint behavior, manual step browsing,
+  AUTO/MANUAL guide selection, missing-quest recovery, and diagnostics.
+- Keeps the TEST250 spirit-healer compatibility fix and TEST251 exact quest
+  pickup recovery.

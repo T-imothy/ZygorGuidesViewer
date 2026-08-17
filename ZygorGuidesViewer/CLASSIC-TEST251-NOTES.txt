@@ -1,0 +1,8 @@
+Zygor Guides Viewer Classic 1.12 - TEST251
+
+- Keeps the TEST250 spirit-healer/respawn compatibility fix.
+- Repairs collection steps reached without their required quest in the log.
+- Uses each objective's exact guide quest ID to return to the correct earlier
+  accept step; it does not infer ownership from similar objective text.
+- Fixes Human step 45 automatically returning to step 41 when quest 60,
+  Kobold Candles, was skipped.

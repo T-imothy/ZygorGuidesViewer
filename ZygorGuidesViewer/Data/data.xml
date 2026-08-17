@@ -1,0 +1,7 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Script file="Chains.lua"/>
+	<!-- TEST314: Daily.lua was a later-expansion data table and is not present
+	     in this Vanilla-only package. QuestTracking.lua initializes the empty
+	     compatibility tables required by the core viewer. -->
+</Ui>

@@ -1,0 +1,58 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/">
+	<Button name="ZygorGuidesViewerMapIcon" movable="true" parent="Minimap" frameStrata="MEDIUM" hidden="true">
+		<Size><AbsDimension x="32" y="32"/></Size>
+		<Anchors><Anchor point="CENTER" relativePoint="BOTTOMLEFT"><Offset><AbsDimension x="16" y="16"/></Offset></Anchor></Anchors>
+
+		<Layers><Layer level="BACKGROUND">
+		<Texture name="$parentOverlay" file="Interface\Minimap\MiniMap-TrackingBorder">
+			<Size><AbsDimension x="64" y="64"/></Size>
+			<Anchors><Anchor point="CENTER" relativePoint="CENTER"><Offset><AbsDimension x="14" y="-14"/></Offset></Anchor></Anchors>
+		</Texture>
+		</Layer></Layers>
+
+		<NormalTexture file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow-here">
+			<Anchors><Anchor point="CENTER" relativePoint="CENTER"><Offset><AbsDimension x="1" y="1"/></Offset></Anchor></Anchors>
+			<Size><AbsDimension x="37" y="37"/></Size>
+			<TexCoords left="0.000" right="1.000" top="0.000" bottom="1.000"/>
+		</NormalTexture>
+
+		<PushedTexture file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow-here">
+			<Anchors><Anchor point="CENTER" relativePoint="CENTER"><Offset><AbsDimension x="1" y="1"/></Offset></Anchor></Anchors>
+			<Size><AbsDimension x="37" y="37"/></Size>
+			<TexCoords left="0.000" right="1.000" top="0.000" bottom="1.000"/>
+		</PushedTexture>
+
+		<HighlightTexture file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow-here" alphaMode="ADD">
+			<Anchors><Anchor point="CENTER" relativePoint="CENTER"><Offset><AbsDimension x="1" y="1"/></Offset></Anchor></Anchors>
+			<Size><AbsDimension x="37" y="37"/></Size>
+			<TexCoords left="0.000" right="1.000" top="0.000" bottom="1.000"/>
+		</HighlightTexture>
+
+
+		<Scripts>
+			<OnClick>
+			if arg1=="LeftButton" then
+				ZygorGuidesViewer:ToggleFrame()
+			else
+				ZygorGuidesViewer:OpenOptions()
+			end
+			</OnClick>
+			<OnDragStart> this:StartMoving() </OnDragStart>
+			<OnDragStop> this:StopMovingOrSizing() </OnDragStop>
+			<OnLoad>
+				this:RegisterForClicks("LeftButtonUp","RightButtonUp")
+				this:RegisterForDrag("LeftButton")
+				_, this.ntx,this.ptx,this.htx = this:GetRegions()
+			</OnLoad>
+			<OnEnter>
+				GameTooltip:SetOwner(this, "BOTTOMLEFT")
+				GameTooltip:SetText(ZygorGuidesViewer.L['name'])
+				GameTooltip:AddLine(ZygorGuidesViewer.L['minimap_tooltip'],0.0,1.0,0.0,1.0)
+				GameTooltip:Show()
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide()
+			</OnLeave>
+		</Scripts>
+	</Button>
+</Ui>

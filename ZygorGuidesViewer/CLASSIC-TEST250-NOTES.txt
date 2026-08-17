@@ -1,0 +1,8 @@
+ZYGOR CLASSIC BACKPORT - TEST250
+================================
+
+- Added a Vanilla 1.12 compatibility shim for IsActiveBattlefieldArena().
+- Fixes the Pointer.lua error triggered while updating the corpse arrow after
+  dying, resurrecting, or accepting a spirit-healer resurrection.
+- Vanilla 1.12 has no arena battleground type, so the compatibility result is
+  always false while ordinary battleground detection remains unchanged.

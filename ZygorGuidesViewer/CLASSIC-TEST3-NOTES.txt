@@ -1,0 +1,9 @@
+Classic 1.12.1 TEST3
+
+Fixes since TEST2:
+- Added _G and common string helper compatibility globals before libraries load.
+- Repaired CallbackHandler vararg function signature.
+- Converted remaining Lua 5.1 modulo (%) operations to Lua 5.0 math.mod().
+- Converted LibTaxi revision :match call to string.match compatibility form.
+
+DBM errors shown in test screenshots are from the installed DBM addon, not Zygor.

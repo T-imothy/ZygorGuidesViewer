@@ -1,0 +1,51 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ D:\UI.xsd">
+
+	<Button name="ZygorGuidesViewerMapSpotMinimapMarker" virtual="true" hidden="false" movable="false" enableMouse="true">
+		<Size x="20" y="20"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow-dot">
+					<Size x="12" y="12"/>
+					<Anchors><Anchor point="CENTER" relativePoint="CENTER" /></Anchors>
+				</Texture>
+				<Texture hidden="true" file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow-edge">
+					<Size x="40" y="40"/>
+					<Anchors><Anchor point="CENTER" relativePoint="CENTER" /></Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+
+		<Scripts>
+			<OnLoad> this:RegisterForClicks("LeftButtonUp") this:RegisterEvent("PLAYER_ENTERING_WORLD")</OnLoad>
+			<OnEnter> ZGV.MapSpot.MinimapButton_OnEnter(this) </OnEnter>
+			<OnLeave> ZGV.MapSpot.MinimapButton_OnLeave(this) </OnLeave>
+			<OnUpdate>ZGV.MapSpot.MinimapButton_OnUpdate(this,arg1) </OnUpdate>
+			<OnClick> ZGV.MapSpot.MinimapButton_OnClick(this,arg1) </OnClick>
+			<OnEvent> ZGV.MapSpot.MinimapButton_OnEvent(this,event,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9) </OnEvent>
+		</Scripts>
+	</Button>
+
+	<Button name="ZygorGuidesViewerMapSpotWorldMapMarker" virtual="true" hidden="false" movable="false" enableMouse="true">
+		<Size x="25" y="25"/>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture name="$parentIcon" file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow-dot" setAllPoints="true" >
+					<!--
+					<Anchors><Anchor point="CENTER" relativePoint="CENTER" /></Anchors>
+					<Size x="25" y="25"/>
+					-->
+				</Texture>
+			</Layer>
+		</Layers>
+
+		<Scripts>
+			<OnLoad> this:RegisterForClicks("RightButtonUp","LeftButtonUp") this:RegisterEvent("PLAYER_ENTERING_WORLD") this:RegisterEvent("WORLD_MAP_UPDATE") </OnLoad>
+			<OnEnter> ZGV.MapSpot.MinimapButton_OnEnter(this) </OnEnter>
+			<OnLeave> ZGV.MapSpot.MinimapButton_OnLeave(this) </OnLeave>
+			<OnClick> ZGV.MapSpot.MinimapButton_OnClick(this,arg1) </OnClick>
+			<OnEvent> ZGV.MapSpot.WorldMapButton_OnEvent(this,event,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9) </OnEvent>
+		</Scripts>
+
+	</Button>
+
+</Ui>

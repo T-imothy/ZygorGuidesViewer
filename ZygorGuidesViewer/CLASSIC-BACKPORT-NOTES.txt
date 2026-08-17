@@ -1,0 +1,88 @@
+Zygor Guides Viewer - Vanilla 1.12.1 Backport (TEST 1)
+========================================================
+
+Source: supplied ZygorGuidesViewer 2.4.3 WotLK-backport build.
+Target client: World of Warcraft 1.12.1 / Interface 11200.
+
+This is the first test build of the Classic backport. It includes:
+- TOC changed to Interface 11200.
+- Lua 5.0 compatibility conversion for the Lua 5.1 # operator and vararg forwarding.
+- Compatibility shims for string.match/string.gmatch/select/wipe/table.maxn.
+- Vanilla-safe quest tracking fallback using quest titles when quest IDs are unavailable.
+- SecureActionButtonTemplate removed; guide action buttons use pre-2.0 click handlers.
+- XML self/elapsed/button script variables converted to Vanilla this/arg1 conventions.
+- LibTaxi chunk-loading compatibility for the Vanilla addon loader.
+
+IMPORTANT:
+This has not been executed inside the actual 1.12.1 WoW client. The first client
+load is expected to expose additional API/UI differences. Enable Lua errors and
+send the first error exactly as shown; fix from the first error downward.
+
+Do not overwrite the working TBC copy with this test build.
+
+TEST233 compiled Vanilla manifest
+=================================
+- BackportTools/validate_guides.py parses every registered guide source.
+- Vanilla level 1-60 quest/NPC/item references are checked against CMaNGOS
+  ClassicDB_1_7_z2684.sql for the 1.12.1 client.
+- Generated_Vanilla_Manifest.lua skips only steps whose quest references are
+  entirely absent from Vanilla; mixed steps remain in the review report.
+- Runtime steps carry stable guide-title and original-step coordinates, so
+  manifest decisions do not depend on display text or stripped directive IDs.
+- Accept, objective, turn-in, level, consumable-use, and arrival transition
+  simulations run during validation.
+- The Tauren Kyle/Ahab chain is excluded at steps 68, 69, 72, and 73 while the
+  valid Thunderhorn steps 70 and 71 remain in route.
+
+TEST234 zone-only travel
+========================
+- Directives such as `goto The Barrens` inherit the first safe coordinate found
+  just inside the destination zone, keeping the arrow and waypoint box visible.
+- Zone-only travel resolves when Vanilla reports the destination through
+  GetRealZoneText/GetZoneText; no quest event or manual Step click is required.
+- The compiler audits zone-only travel fallbacks and includes zone-arrival in
+  the transition simulations.
+
+TEST235 applicability trace
+===========================
+- Large automatic jumps now report how many class/race/manifest-inapplicable
+  steps were skipped, making legitimate branch transitions distinguishable
+  from recovery bugs in the in-game diagnostics.
+- The offline regression suite mirrors runtime `only` applicability and proves
+  that Tauren Warrior step 88 correctly advances to the next applicable step,
+  step 130, across the Shaman, Hunter, and Druid class blocks.
+
+TEST236 item-start acceptance
+=============================
+- An untagged `get Item|n` checkpoint no longer blocks after the same step's
+  matching `use Item##id` action has produced its live accepted quest.
+- The proof is generic and requires matching item names plus a same-step live
+  accept; unrelated objectives or historical quest records cannot satisfy it.
+- The offline transition suite now detects and simulates item-start accepts,
+  with a regression for Tauren step 153's Demon Scarred Cloak handoff.
+
+TEST237 item metadata match
+===========================
+- Item-start matching now removes preserved trailing guide metadata such as
+  `|n` before comparing a `get` checkpoint with its paired `|use` item name.
+- This closes the live TEST236 failure where the cloak quest was visibly active
+  but `get Demon Scarred Cloak|n` did not equal `use Demon Scarred Cloak`.
+
+TEST238 flight-path witness
+===========================
+- LibTaxi no longer calls the unavailable Lua 5.1 `name:match` string method
+  when `TAXIMAP_OPENED` enumerates taxi nodes on the Vanilla client.
+- Opening a flight master's taxi map records its `CURRENT` node per character;
+  matching `fpath Name` steps resolve from that durable, exact interaction.
+- The compiler now detects and simulates flight-path steps, with a regression
+  for Tauren step 161 at Camp Taurajo.
+
+TEST239 routed home steps
+=========================
+- Tauren step 166 now points to and names Innkeeper Boorand Plainswind at the
+  Crossroads instead of inheriting Devrak's stale flight-master waypoint.
+- The equivalent Main Guide (13-20) Crossroads home step carries the same data.
+- Coordinate inheritance for legacy `home` steps now requires the preceding
+  step to explicitly name an innkeeper, preventing unrelated stale arrows.
+- The offline audit detects `home` transitions without their own waypoint and
+  includes a regression for the Tauren Crossroads route and innkeeper NPC.

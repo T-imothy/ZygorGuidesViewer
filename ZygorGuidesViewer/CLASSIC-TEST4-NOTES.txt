@@ -1,0 +1,1 @@
+TEST4: Vanilla bootstrap fix. Reworked Compat_112, replaced all bundled LibStub copies with a WoW 1.12-safe implementation, and removed Lua 5.1 string.match use from DongleStub.

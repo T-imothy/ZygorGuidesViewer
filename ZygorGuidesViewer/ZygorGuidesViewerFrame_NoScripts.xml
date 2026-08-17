@@ -1,0 +1,876 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ D:\UI.xsd">
+	<Script file="ZygorGuidesViewerFrame.lua"/>
+	<FontString name="ZGVFStepLineText" inherits="GameFontHighlightSmall" text="" justifyH="LEFT" justifyV="TOP" virtual="true">
+	<!-- multilineIndent="true" -->
+		<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" /></Anchors>
+		<Color r="1.0" g="1.0" b="1.0"/>
+	</FontString>
+
+	<Font name="ZGVFTabFont" inherits="SystemFont_Small" virtual="true">
+		<Color r="1.0" g="1.0" b="1.0"/>
+		<FontHeight val="9" />
+	</Font>
+
+	<Texture name="ZGVFStepLineIcon" virtual="true"><Size x="14" y="14"/></Texture>
+	
+	<Texture name="ZGVFStepLineBack" virtual="true"><!--
+		<Animations>
+			<AnimationGroup name="$parent_white2green">
+				<Animation duration="0.5" maxFramerate="30" smoothing="OUT">
+					<Scripts>
+						<OnUpdate></OnUpdate>
+					</Scripts>
+				</Animation>
+			</AnimationGroup>
+			<AnimationGroup name="$parent_white2rgba">
+				<Animation duration="0.5" maxFramerate="30" smoothing="OUT">
+					<Scripts>
+						<OnUpdate></OnUpdate>
+					</Scripts>
+				</Animation>
+			</AnimationGroup>
+		</Animations>-->
+		<Color r="1.0" g="1.0" b="1.0"/>
+	</Texture>
+
+	<Frame name="ZGVFStepLine" virtual="true">
+		<Frames>
+			<Button name="$parentClicker" hidden="false" frameStrata="LOW" />
+		</Frames>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBack" inherits="ZGVFStepLineBack" hidden="true" />
+			</Layer>
+			<Layer level="ARTWORK">
+				<FontString name="$parentText" inherits="ZGVFStepLineText" />
+				<Texture name="$parentIcon" inherits="ZGVFStepLineIcon" hidden="true" />
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad></OnLoad>
+		</Scripts>
+	</Frame>
+
+	<Button name="ZGVFStep" virtual="true" hidden="true" movable="true" enableMouse="false">
+	<!--
+		<Animations>
+			<AnimationGroup name="$parent_slideup">
+				<Animation duration="0.3" maxFramerate="30" smoothing="IN_OUT" order="1">
+					<Scripts>
+						<OnPlay>
+							this.f = this:GetRegionParent()
+							this.f:ClearAllPoints()
+							this.offset = 50
+						</OnPlay>
+						<OnUpdate></OnUpdate>
+						<OnFinished>
+							this.f:SetPoint("TOPLEFT","ZygorGuidesViewerFrameScrollChild","TOPLEFT",0,0)
+							this.f:SetPoint("TOPRIGHT","ZygorGuidesViewerFrameScrollChild","TOPRIGHT",0,0)
+						</OnFinished>
+					</Scripts>
+				</Animation>
+			</AnimationGroup>
+			<AnimationGroup name="$parent_fadeout">
+				<Alpha duration="2.3" maxFramerate="30" smoothing="NONE" change="-1" order="1">
+					<Scripts>
+						<OnFinished>
+							this:GetRegionParent():Hide()
+						</OnFinished>
+					</Scripts>
+				</Alpha>
+			</AnimationGroup>
+		</Animations>
+		-->
+		<Frames>
+			<Frame name="$parent_Line1" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line2" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line3" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line4" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line5" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line6" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line7" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line8" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line9" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line10" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line11" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line12" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line13" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line14" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line15" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line16" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line17" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line18" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line19" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line20" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Border" />
+		</Frames>
+		<Scripts>
+			<OnDragStart></OnDragStart>
+			<OnDragStop></OnDragStop>
+			<OnLoad></OnLoad>
+		</Scripts>
+	</Button>
+
+	<Button name="ZGVFSpot" virtual="true" hidden="true" movable="true" enableMouse="false">
+		<Frames>
+			<Frame name="$parent_Line1" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line2" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line3" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line4" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line5" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line6" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line7" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line8" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line9" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line10" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line11" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line12" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line13" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line14" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line15" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line16" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line17" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line18" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line19" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Line20" inherits="ZGVFStepLine" />
+			<Frame name="$parent_Border" />
+		</Frames>
+		<Scripts>
+			<OnDragStart></OnDragStart>
+			<OnDragStop></OnDragStop>
+			<OnLoad></OnLoad>
+		</Scripts>
+	</Button>
+	
+	<Button name="ZGVFTab" qinherits="UIPanelButtonTemplate" virtual="true" hidden="true">
+		<Size x="40" y="15" />
+		<NormalFont style="GameFontNormalSmall"/>
+		<HighlightFont style="GameFontHighlightSmall"/>
+		<HighlightTexture inherits="UIPanelButtonHighlightTexture"/>
+	</Button>
+
+
+
+	
+	<!--
+	<CheckButton name="ZGVMFAction" inherits="ActionBarButtonTemplate" virtual="true">
+		<Attributes>
+			<Attribute name="type" value="action"/>
+			<Attribute name="action" type="number" value="13"/>
+			<Attribute name="unit" value="player"/>
+		</Attribute>
+	</CheckButton>
+	-->
+
+
+
+
+
+	<Frame name="ZygorGuidesViewerFrameMaster" toplevel="true" hidden="false" frameStrata="MEDIUM" parent="UIParent" movable="true" resizable="true" clampedToScreen="true">
+		<Anchors><Anchor point="CENTER" relativePoint="CENTER"><Offset x="0" y="0"/></Anchor></Anchors>
+		<Size x="40" y="40"/>
+		<Scripts>
+			<OnUpdate></OnUpdate>
+		</Scripts>
+		<!--
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture setAllPoints="true">
+					<Size x="10" y="10"/>
+					<Color r="1.0" g="1.0" b="1.0" a="1.0" />
+				</Texture>
+			</Layer>
+		</Layers>
+		-->
+		<Frames>
+			<Frame name="ZygorGuidesViewerFrame" toplevel="true" hidden="true" frameStrata="MEDIUM" resizable="true" clampedToScreen="true">
+				<Anchors>
+					<Anchor point="CENTER" relativePoint="CENTER" />
+				</Anchors>
+				<Size x="320" y="100"/>
+				<!--
+				<Animations>
+					<AnimationGroup name="$parent_slideup">
+						<Translation duration="0.0" maxFramerate="30" smoothing="NONE" offsetX="0" offsetY="-50" order="1"></Translation>
+						<Translation duration="0.3" maxFramerate="30" smoothing="IN_OUT" offsetX="0" offsetY="50" order="2"></Translation>
+					</AnimationGroup>
+					<AnimationGroup name="$parent_size">
+						<Animation duration="0.5" maxFramerate="30" smoothing="IN_OUT">
+							<Scripts>
+								<OnPlay>
+									this.frame = this:GetParent():GetParent()
+									if this.frame.curheight then this.frame.height=this.frame.curheight end
+									this.frame.height = this.frame:GetHeight()
+								</OnPlay>
+								<OnUpdate></OnUpdate>
+								<OnFinished>
+									this.frame.height=this.frame.targetheight
+									print("finish")
+								</OnFinished>
+							</Scripts>
+						</Animation>
+					</AnimationGroup>
+				</Animations>
+-->
+				<Scripts>
+					<OnEvent></OnEvent>
+					<OnLoad></OnLoad>
+					<OnShow></OnShow>
+					<OnHide></OnHide>
+					<OnSizeChanged>
+						local ZGV = ZygorGuidesViewer
+						if not ZGV or not ZGV.db then return end
+
+						local width = this:GetWidth()
+
+						if ZGV.db.profile.showallsteps then
+							ZygorGuidesViewerFrameScrollChild:SetWidth(width-39)
+						else
+							ZygorGuidesViewerFrameScrollChild:SetWidth(width-20)
+						end
+
+						ZGV:UpdateFrame(true)
+						ZGV:ResizeFrame()
+
+						this.oldWidth=this:GetWidth()
+						if ZGV.db.profile.showallsteps then
+							ZGV.db.profile.fullheight = this:GetHeight()
+						end
+						--this.aligncount=4
+					</OnSizeChanged>
+					<OnUpdate></OnUpdate>
+				</Scripts>
+
+				<Frames>
+					<!--<Frame name="$parent_Cover" framestrata="HIGH">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativePoint="TOPLEFT"/>
+							<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT"/>
+						</Anchors>
+					</Frame>-->
+
+					<Button name="ZygorGuidesViewerFrame_FakeStep" inherits="ZGVFStep" />
+
+					<Frame>
+						<Anchors>
+							<Anchor point="TOPLEFT"/>
+							<Anchor point="BOTTOMRIGHT"/>
+						</Anchors>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="ZygorGuidesViewerFrame_MissingText" inherits="GameFontNormalSmall" text="" justifyH="CENTER" justifyV="TOP">
+									<Anchors>
+										<Anchor point="TOPLEFT" relativePoint="TOPLEFT"><Offset x="5" y="-30"/></Anchor>
+										<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT"><Offset x="-5" y="-30"/></Anchor>
+										<Anchor point="BOTTOM" relativePoint="BOTTOM"><Offset x="0" y="5"/></Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+
+						<Frames>
+							<Button name="ZygorGuidesViewerFrame_Step1" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step2" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step3" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step4" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step5" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step6" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step7" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step8" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step9" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step10" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step11" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step12" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step13" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step14" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step15" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step16" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step17" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step18" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step19" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Step20" inherits="ZGVFStep" />
+
+							<Button name="ZygorGuidesViewerFrame_Spot1" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot2" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot3" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot4" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot5" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot6" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot7" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot8" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot9" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot10" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot11" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot12" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot13" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot14" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot15" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot16" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot17" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot18" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot19" inherits="ZGVFStep" />
+							<Button name="ZygorGuidesViewerFrame_Spot20" inherits="ZGVFStep" />
+						</Frames>
+					</Frame>
+					
+					<Frame name="$parent_Border" hidden="true">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativePoint="TOPLEFT"/>
+							<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT"/>
+						</Anchors>
+
+						<Backdrop bgFile="Interface\AddOns\ZygorGuidesViewer\Skin\leavesofsteel_bgr" qedgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+							<BackgroundInsets left="0" right="0" top="20" bottom="0" />	
+							<TileSize val="128"/>
+						</Backdrop>
+
+						<Layers>
+							<Layer level="BORDER">
+								<Texture name="$parent_Top" file="skinned"/>
+								<Texture name="$parent_Left" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_border"/>
+								<Texture name="$parent_Right" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_border"/>
+								<Texture name="$parent_Bottom" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_border"/>
+							</Layer>
+							<Layer level="OVERLAY">
+								<FontString name="$parent_SectionTitle" inherits="GameFontNormalSmall" justifyH="CENTER" justifyV="TOP">
+									<Size x="145" y="15"/>
+								</FontString>
+
+								<Texture name="$parent_Gear1" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_gear1">
+									<Size x="45" y="45"/>
+									<!--
+									<Animations>
+										<AnimationGroup name="$parent_turn"><Animation duration="0.5" maxFramerate="30" smoothing="IN_OUT"><Scripts><OnUpdate></OnUpdate><OnFinished>this:GetParent():GetParent().angle=this:GetParent():GetParent().angle+this.step</OnFinished></Scripts></Animation></AnimationGroup>
+										<AnimationGroup name="$parent_back"><Animation duration="0.5" maxFramerate="30" smoothing="IN_OUT"><Scripts><OnUpdate></OnUpdate><OnFinished>this:GetParent():GetParent().angle=this:GetParent():GetParent().angle+this.step</OnFinished></Scripts></Animation></AnimationGroup>
+										<AnimationGroup name="$parent_turn2"><Animation duration="0.7" maxFramerate="30" smoothing="OUT"><Scripts><OnPlay>this.tex=this:GetParent():GetParent()  this.tex.targetangle=this.tex.tangle  if this.tex.curangle then this.tex.angle=this.tex.curangle end </OnPlay><OnUpdate></OnUpdate><OnFinished>this.tex.angle=this.tex.curangle</OnFinished></Scripts></Animation></AnimationGroup>
+									</Animations>
+									-->
+								</Texture>
+								<Texture name="$parent_Gear2" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_gear2">
+									<Size x="30" y="26"/>
+									<!--
+									<Animations>
+										<AnimationGroup name="$parent_turn"><Animation duration="0.5" maxFramerate="30" smoothing="IN_OUT"><Scripts><OnUpdate></OnUpdate><OnFinished>this:GetParent():GetParent().angle=this:GetParent():GetParent().angle+this.step</OnFinished></Scripts></Animation></AnimationGroup>
+										<AnimationGroup name="$parent_back"><Animation duration="0.5" maxFramerate="30" smoothing="IN_OUT"><Scripts><OnUpdate></OnUpdate><OnFinished>this:GetParent():GetParent().angle=this:GetParent():GetParent().angle+this.step</OnFinished></Scripts></Animation></AnimationGroup>
+										<AnimationGroup name="$parent_turn2"><Animation duration="0.7" maxFramerate="30" smoothing="OUT"><Scripts><OnPlay>this.tex=this:GetParent():GetParent()  this.tex.targetangle=this.tex.tangle  if this.tex.curangle then this.tex.angle=this.tex.curangle end </OnPlay><OnUpdate></OnUpdate><OnFinished>this.tex.angle=this.tex.curangle</OnFinished></Scripts></Animation></AnimationGroup>
+									</Animations>
+									-->
+								</Texture>
+								<Texture name="$parent_Gear3" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_gear3">
+									<Size x="20" y="20"/>
+									<!--
+									<Animations>
+										<AnimationGroup name="$parent_turn"><Animation duration="0.5" maxFramerate="30" smoothing="IN_OUT"><Scripts><OnUpdate></OnUpdate><OnFinished>this:GetParent():GetParent().angle=this:GetParent():GetParent().angle+this.step</OnFinished></Scripts></Animation></AnimationGroup>
+										<AnimationGroup name="$parent_back"><Animation duration="0.5" maxFramerate="30" smoothing="IN_OUT"><Scripts><OnUpdate></OnUpdate><OnFinished>this:GetParent():GetParent().angle=this:GetParent():GetParent().angle+this.step</OnFinished></Scripts></Animation></AnimationGroup>
+										<AnimationGroup name="$parent_turn2"><Animation duration="0.7" maxFramerate="30" smoothing="OUT"><Scripts><OnPlay>this.tex=this:GetParent():GetParent()  this.tex.targetangle=this.tex.tangle  if this.tex.curangle then this.tex.angle=this.tex.curangle end </OnPlay><OnUpdate></OnUpdate><OnFinished>this.tex.angle=this.tex.curangle</OnFinished></Scripts></Animation></AnimationGroup>
+									</Animations>
+									-->
+								</Texture>
+							</Layer>
+						</Layers>
+
+						<Frames>
+							<Frame name="$parent_TitleBar">
+								<Size x="150" y="32"/>
+								<Anchors>
+									<Anchor point="TOPLEFT" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor>
+									<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT"><Offset x="0" y="0"/></Anchor>
+								</Anchors>
+								<Scripts>
+									<!--
+									<OnEnter></OnEnter>
+									<OnLeave></OnLeave>
+									-->
+									<OnDragStart></OnDragStart>
+									<OnDragStop></OnDragStop>
+									<OnLoad></OnLoad>
+								</Scripts>
+								<!--
+								<Frames>
+
+									<PlayerModel name="ZGVFModel" file="Item/Objectcomponents/weapon/knife_1h_northrend_d_01.m2" scale="1.0">
+										<Size>
+											<AbsDimension x="300" y="300"/>
+										
+										<Anchors>
+											<Anchor point="TOPLEFT">
+												<Offset x="5" y="-5"/>
+											</Anchor>
+										</Anchors>
+										<Scripts>
+											<OnLoad></OnLoad>
+											<OnUpdate></OnUpdate>
+										</Scripts>
+									</PlayerModel>
+
+								</Frames>
+									-->
+							</Frame>
+
+							<Frame name="$parent_Gears"><!-- gears? -->
+								<Anchors><Anchor point="TOPLEFT"/><Anchor point="BOTTOMRIGHT"/></Anchors>
+								<Frames>
+
+									<Button name="$parent_GuideButton" text="v" hidden="true">
+									<!--
+										<Animations>
+											<AnimationGroup name="$parent_in">
+												<Animation duration="0.5" maxFramerate="30" smoothing="OUT">
+													<Scripts>
+														<OnPlay>
+															this:GetParent():GetParent():Show()
+														</OnPlay>
+														<OnUpdate></OnUpdate>
+													</Scripts>
+												</Animation>
+											</AnimationGroup>
+											<AnimationGroup name="$parent_out">
+												<Animation duration="0.5" maxFramerate="30" smoothing="OUT">
+													<Scripts>
+														<OnUpdate></OnUpdate>
+														<OnFinished>
+															this:GetParent():GetParent():Hide()
+														</OnFinished>
+													</Scripts>
+												</Animation>
+											</AnimationGroup>
+											<AnimationGroup looping="REPEAT" name="$parent_blink">
+												<Animation startDelay="0.5" duration="0.1" maxFramerate="10" smoothing="NONE">
+													<Scripts>
+														<OnUpdate></OnUpdate>
+													</Scripts>
+												</Animation>
+												<Animation startDelay="0.5" duration="0.1" maxFramerate="10" smoothing="NONE">
+													<Scripts>
+														<OnUpdate></OnUpdate>
+													</Scripts>
+												</Animation>
+											</AnimationGroup>
+										</Animations>
+										-->
+										<Anchors>
+											<Anchor point="BOTTOM" relativePoint="BOTTOM"></Anchor>
+										</Anchors>
+										<Size x="50" y="28"/>
+										<NormalTexture    file=""                ><TexCoords left="0.0" right="1.000" top="0.000" bottom="0.550"/></NormalTexture>
+										<PushedTexture    file=""                ><TexCoords left="0.0" right="1.000" top="0.000" bottom="0.550"/></PushedTexture>
+										<HighlightTexture file="" alphaMode="ADD"><TexCoords left="0.0" right="1.000" top="0.000" bottom="0.550"/></HighlightTexture>
+										<Scripts>
+											<OnClick></OnClick>
+											<OnEnter></OnEnter>
+											<OnLeave></OnLeave>
+											<OnLoad></OnLoad>
+										</Scripts>
+									</Button>
+
+									<Frame name="$parent_Corners"><!-- corners -->
+										<Anchors><Anchor point="TOPLEFT"/><Anchor point="BOTTOMRIGHT"/></Anchors>
+						
+										<Layers>
+											<Layer level="OVERLAY">
+												<Texture name="$parent_TopLeft" file=""/>
+												<Texture name="$parent_TopRight" file=""/>
+												<Texture name="$parent_BottomLeft" file=""/>
+												<Texture name="$parent_BottomRight" file=""/>
+												<Texture name="$parent_Logo" file="(zglogo)">
+													<Size x="26" y="26"/>
+													<TexCoords left="0.000" right="1.000" top="0.000" bottom="0.250"/>
+												</Texture>
+											</Layer>
+										</Layers>
+
+										<Frames>
+											<Button name="$parent_MiniButton">
+												<Size x="20" y="20"/>
+												<Anchors><Anchor point="CENTER" relativePoint="TOPRIGHT"><Offset x="-40" y="-5"/></Anchor></Anchors>
+												<NormalTexture file=""                ><TexCoords left="0.000" right="0.125" top="0.000" bottom="0.250"/></NormalTexture>
+												<PushedTexture file=""                ><TexCoords left="0.000" right="0.125" top="0.250" bottom="0.500"/></PushedTexture>
+												<HighlightTexture file="" alphaMode="ADD"><TexCoords left="0.000" right="0.125" top="0.500" bottom="0.750"/></HighlightTexture>
+												<Scripts>
+													<OnClick></OnClick>
+													<OnEnter></OnEnter>
+													<OnLeave></OnLeave>
+													<OnLoad></OnLoad>
+												</Scripts>
+											</Button>
+
+											<Button name="$parent_LockButton">
+												<Size x="20" y="20"/>
+												<Anchors><Anchor point="CENTER" relativePoint="TOPLEFT"><Offset x="8" y="-13"/></Anchor></Anchors>
+												<NormalTexture file=""                ><TexCoords left="0.250" right="0.375" top="0.000" bottom="0.250"/></NormalTexture>
+												<PushedTexture file=""                ><TexCoords left="0.250" right="0.375" top="0.250" bottom="0.500"/></PushedTexture>
+												<HighlightTexture file="" alphaMode="ADD"><TexCoords left="0.250" right="0.375" top="0.500" bottom="0.750"/></HighlightTexture>
+												<Scripts>
+													<OnClick></OnClick>
+													<OnEnter></OnEnter>
+													<OnLeave></OnLeave>
+													<OnLoad></OnLoad>
+												</Scripts>
+											</Button>
+
+											<Button name="$parent_SettingsButton">
+												<Size x="20" y="20"/>
+												<NormalTexture file=""                ><TexCoords left="0.500" right="0.625" top="0.000" bottom="0.250"/></NormalTexture>
+												<PushedTexture file=""                ><TexCoords left="0.500" right="0.625" top="0.250" bottom="0.500"/></PushedTexture>
+												<HighlightTexture file="" alphaMode="ADD"><TexCoords left="0.500" right="0.625" top="0.500" bottom="0.750"/></HighlightTexture>
+												<Scripts>
+													<OnClick></OnClick>
+													<OnEnter></OnEnter>
+													<OnLeave></OnLeave>
+													<OnLoad></OnLoad>
+												</Scripts>
+											</Button>
+
+											<Button name="$parent_CloseButton" inherits="UIPanelCloseButton">
+												<Size x="20" y="20"/>
+												<Anchors><Anchor point="CENTER" relativePoint="TOPRIGHT"><Offset x="-8" y="-13"/></Anchor></Anchors>
+												<Scripts>
+													<OnClick></OnClick>
+													<OnLoad></OnLoad>
+												</Scripts>
+												<NormalTexture file=""                ><TexCoords left="0.625" right="0.750" top="0.000" bottom="0.250"/></NormalTexture>
+												<PushedTexture file=""                ><TexCoords left="0.625" right="0.750" top="0.250" bottom="0.500"/></PushedTexture>
+												<HighlightTexture file="" alphaMode="ADD"><TexCoords left="0.625" right="0.750" top="0.500" bottom="0.750"/></HighlightTexture>
+											</Button>
+
+											<Frame name="$parent_SectionDropDown" inherits="UIDropDownMenuTemplate" hidden="true">
+												<Anchors>
+													<Anchor point="TOPLEFT"><Offset x="30" y="5"/></Anchor>
+													<Anchor point="TOPRIGHT"><Offset x="-30" y="5"/></Anchor>
+												</Anchors>
+												<Scripts>
+													<OnLoad></OnLoad>
+													<OnShow></OnShow>
+												</Scripts>
+											</Frame>
+
+											<Frame name="ZygorGuidesViewerFrame_Skipper">
+												<Anchors><Anchor point="TOPLEFT"><Offset x="-26" y="-31"/></Anchor></Anchors>
+												<Size x="20" y="54"/>
+												<Frames>
+													<Button name="$parent_PrevButton">
+														<Size x="20" y="20"/>
+														<Anchors><Anchor point="TOP"><Offset x="0" y="0"/></Anchor></Anchors>
+														<NormalTexture file=""                ><TexCoords left="0.750" right="0.875" top="0.000" bottom="0.250"/></NormalTexture>
+														<PushedTexture file=""                ><TexCoords left="0.750" right="0.875" top="0.250" bottom="0.500"/></PushedTexture>
+														<HighlightTexture file="" alphaMode="ADD"><TexCoords left="0.750" right="0.875" top="0.500" bottom="0.750"/></HighlightTexture>
+														<Scripts>
+															<OnClick></OnClick>
+															<OnEnter></OnEnter>
+															<OnLeave></OnLeave>
+															<OnLoad></OnLoad>
+														</Scripts>
+													</Button>
+													<Button name="$parent_NextButton">
+														<Size x="20" y="20"/>
+														<Anchors><Anchor point="TOP" relativeTo="$parent_PrevButton" relativePoint="BOTTOM"><Offset x="0" y="-14"/></Anchor></Anchors>
+														<NormalTexture file=""                ><TexCoords left="0.875" right="1.000" top="0.000" bottom="0.250"/></NormalTexture>
+														<PushedTexture file=""                ><TexCoords left="0.875" right="1.000" top="0.250" bottom="0.500"/></PushedTexture>
+														<HighlightTexture file="" alphaMode="ADD"><TexCoords left="0.875" right="1.000" top="0.500" bottom="0.750"/></HighlightTexture>
+														<Scripts>
+															<OnClick></OnClick>
+															<OnEnter></OnEnter>
+															<OnLeave></OnLeave>
+															<OnLoad></OnLoad>
+														</Scripts>
+													</Button>
+												</Frames>
+												<Layers>
+													<Layer level="OVERLAY">
+														<FontString name="$parent_Step" inherits="GameFontHighlightSmall" justifyH="center" justifyV="MIDDLE" text="">
+															<Size x="25" y="14"/>
+															<Anchors><Anchor point="TOP"><Offset x="0" y="-19"/></Anchor></Anchors>
+														</FontString>
+													</Layer>
+												</Layers>
+												<Scripts>
+													<OnLoad></OnLoad>
+													<OnMouseWheel></OnMouseWheel>
+												</Scripts>
+											</Frame>
+
+											<Frame name="$parent_Flash" alpha="0.0">
+												<Anchors><Anchor point="TOPLEFT"/><Anchor point="BOTTOMRIGHT"/></Anchors>
+												<Frames>
+													<Frame>
+													<Anchors><Anchor point="TOPLEFT"/><Anchor point="BOTTOMRIGHT"/></Anchors>
+														<!--
+														<Animations>
+															<AnimationGroup name="$parent_flash">
+																<Scripts>
+																	<OnPlay>
+																		this:GetParent():GetParent():SetAlpha(0.5)
+																	</OnPlay>
+																	<OnFinished>
+																		this:GetParent():GetParent():SetAlpha(0)
+																	</OnFinished>
+																</Scripts>
+																<Alpha name="$parent_flashPre" looping="NONE" duration="0" maxFramerate="30" change="-1" />
+																<Alpha name="$parent_flashIn" looping="NONE" duration="0.0" maxFramerate="30" smoothing="IN" change="1.0" />
+																<Alpha name="$parent_flashOut" looping="NONE" duration="1.0" maxFramerate="30" smoothing="OUT" change="-1.0" />
+															</AnimationGroup>
+														</Animations>
+														-->
+														<Layers>
+															<Layer level="BORDER">
+																<Texture name="$parent_Top" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_top_flash.blp" alphaMode="ADD"/>
+																<Texture name="$parent_Left" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_border_flash.blp" alphaMode="ADD"/>
+																<Texture name="$parent_Right" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_border_flash.blp" alphaMode="ADD"/>
+																<Texture name="$parent_Bottom" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_border_flash.blp" alphaMode="ADD"/>
+															</Layer>
+															<Layer level="ARTWORK">
+																<Texture name="$parent_TopLeft" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_flash" alphaMode="ADD"/>
+																<Texture name="$parent_TopRight" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_flash" alphaMode="ADD"/>
+																<Texture name="$parent_BottomLeft" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_flash" alphaMode="ADD"/>
+																<Texture name="$parent_BottomRight" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_flash" alphaMode="ADD"/>
+																<Texture name="$parent_Logo" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_flash" alphaMode="ADD">
+																	<Size x="50" y="50"/>
+																	<TexCoords left="0.8198" right="0.9087" top="0.7627" bottom="0.9404"/>
+																</Texture>
+															</Layer>
+														</Layers>
+													</Frame>
+												</Frames>
+											</Frame>
+										</Frames>
+									</Frame>
+
+									<Button name="$parentTab1" inherits="ZGVFTab" />
+									<Button name="$parentTab2" inherits="ZGVFTab" />
+									<Button name="$parentTab3" inherits="ZGVFTab" />
+									<Button name="$parentTab4" inherits="ZGVFTab" />
+
+								</Frames>
+							</Frame>
+						</Frames>
+					</Frame>
+
+					<ScrollFrame name="$parentScroll" qinherits="FauxScrollFrameTemplate" hidden="true">
+						<Anchors>
+							<Anchor point="TOPLEFT"><Offset x="20" y="-35"/></Anchor>
+							<Anchor point="BOTTOMRIGHT"><Offset x="-20" y="10"/></Anchor>
+						</Anchors>
+
+						<Frames>
+							<Slider name="$parentScrollBar" inherits="UIPanelScrollBarTemplate">
+								<Anchors>
+									<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+										<Offset x="0" y="-16"/>
+									</Anchor>
+									<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
+										<Offset x="0" y="16"/>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnValueChanged></OnValueChanged>
+								</Scripts>
+							</Slider>
+						</Frames>
+
+						<ScrollChild>
+							<Frame name="$parentChild">
+								<Size x="300" y="50"/>
+								<Anchors>
+									<Anchor point="TOPLEFT"/>
+									<Anchor point="BOTTOMRIGHT"/>
+								</Anchors>
+							</Frame>
+						</ScrollChild>
+
+						<Scripts>
+							<OnUpdate></OnUpdate>
+						</Scripts>
+					</ScrollFrame>
+
+					<Frame name="$parent_ThinFlash" frameStrata="HIGH" hidden="true">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentScroll"><Offset x="-18" y="18"/></Anchor>
+							<Anchor point="BOTTOMRIGHT" relativeTo="$parentScroll"><Offset x="18" y="-18"/></Anchor>
+						</Anchors>
+						<Backdrop bgFile="Interface/Buttons/white8x8" edgeFile="Interface\Addons\ZygorGuidesViewer\Skin\glowborder.tga" tile="true">
+							<EdgeSize><AbsValue val="32"/></EdgeSize>
+							<BackgroundInsets><AbsInset left="20" right="20" top="20" bottom="20"/></BackgroundInsets>
+						</Backdrop>
+						<!--
+						<Animations>
+							<AnimationGroup name="$parent_flash">
+								<Scripts>
+									<OnPlay>
+										this:GetParent():SetAlpha(1)
+									</OnPlay>
+									<OnFinished>
+										this:GetParent():SetAlpha(0)
+									</OnFinished>
+								</Scripts>
+								<Animation name="$parent_flashOut" looping="NONE" duration="0.4" maxFramerate="30" smoothing="OUT">
+									<Scripts>
+										<OnUpdate></OnUpdate>
+									</Scripts>
+								</Animation>
+							</AnimationGroup>
+						</Animations>
+						-->
+					</Frame>
+
+					<Frame name="ZGVFMenu" inherits="UIDropDownMenuTemplate" hidden="true"/>
+
+					<Frame name="$parent_ResizerLeft">
+						<Size x="10" y="10"/>
+						<Anchors>
+							<Anchor point="TOPLEFT" relativePoint="TOPLEFT"><Offset x="0" y="-10"/></Anchor>
+							<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT"><Offset x="0" y="10"/></Anchor>
+						</Anchors>
+						<Scripts>
+							<OnMouseDown></OnMouseDown>
+							<OnMouseUp></OnMouseUp>
+						</Scripts>
+					</Frame>
+					
+					<Frame name="$parent_ResizerRight">
+						<Size x="10" y="10"/>
+						<Anchors>
+							<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT"><Offset x="0" y="-10"/></Anchor>
+							<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT"><Offset x="0" y="10"/></Anchor>
+						</Anchors>
+						<Scripts>
+							<OnMouseDown></OnMouseDown>
+							<OnMouseUp></OnMouseUp>
+						</Scripts>
+					</Frame>
+					
+					<Frame name="$parent_ResizerBottom">
+						<Size x="10" y="10"/>
+						<Anchors><!-- will anchor in code --></Anchors>
+						<Scripts>
+							<OnMouseDown></OnMouseDown>
+							<OnMouseUp></OnMouseUp>
+						</Scripts>
+					</Frame>
+					
+					<Frame name="$parent_ResizerBottomLeft">
+						<Size x="10" y="10"/>
+						<Anchors>
+							<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT"/>
+						</Anchors>
+						<Scripts>
+							<OnMouseDown></OnMouseDown>
+							<OnMouseUp></OnMouseUp>
+						</Scripts>
+					</Frame>
+					
+					<Frame name="$parent_ResizerBottomRight">
+						<Size x="10" y="10"/>
+						<Anchors>
+							<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT"/>
+						</Anchors>
+						<Scripts>
+							<OnMouseDown></OnMouseDown>
+							<OnMouseUp></OnMouseUp>
+						</Scripts>
+					</Frame>
+					
+				</Frames>
+			</Frame>  
+		</Frames>
+	</Frame>
+
+
+	<Frame name="ZygorGuidesViewerMaintenanceFrame" toplevel="true" frameStrata="DIALOG" movable="true" enableMouse="true" hidden="true" parent="UIParent">
+		<Size x="300" y="300"/>
+		<Anchors><Anchor point="CENTER"/></Anchors>
+		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+			<BackgroundInsets>
+				<AbsInset left="11" right="12" top="12" bottom="11"/>
+			</BackgroundInsets>
+			<TileSize val="32"/>
+			<EdgeSize val="32"/>
+		</Backdrop>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture name="$parent_FrameHeader" file="Interface\DialogFrame\UI-DialogBox-Header">
+					<Size x="450" y="64"/>
+					<Anchors><Anchor point="TOP"><Offset x="0" y="12"/></Anchor></Anchors>
+				</Texture>
+				<FontString inherits="GameFontNormal" text="Zygor Guides Maintenance">
+					<Anchors><Anchor point="TOP" relativeTo="$parent_FrameHeader"><Offset x="0" y="-14"/></Anchor></Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<CheckButton name="$parent_StartGuides" inherits="UICheckButtonTemplate">
+				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT"><Offset x="20" y="-27"/></Anchor></Anchors>
+				<Scripts>
+					<OnLoad></OnLoad>
+					<OnClick></OnClick>
+					<OnEnter></OnEnter>
+					<OnLeave></OnLeave>
+				</Scripts>
+			</CheckButton>
+
+			<CheckButton name="$parent_QueryQuests" inherits="UICheckButtonTemplate">
+				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="$parent_StartGuides"><Offset x="0" y="-27"/></Anchor></Anchors>
+				<Scripts>
+					<OnLoad></OnLoad>
+					<OnClick></OnClick>
+					<OnEnter></OnEnter>
+					<OnLeave></OnLeave>
+				</Scripts>
+			</CheckButton>
+
+			<CheckButton name="$parent_FetchQuestData" inherits="UICheckButtonTemplate">
+				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="$parent_QueryQuests"><Offset x="0" y="-27"/></Anchor></Anchors>
+				<Scripts>
+					<OnLoad></OnLoad>
+					<OnClick></OnClick>
+					<OnEnter></OnEnter>
+					<OnLeave></OnLeave>
+				</Scripts>
+			</CheckButton>
+
+			<CheckButton name="$parent_FetchItemData" inherits="UICheckButtonTemplate">
+				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="$parent_FetchQuestData"><Offset x="0" y="-27"/></Anchor></Anchors>
+				<Scripts>
+					<OnLoad></OnLoad>
+					<OnClick></OnClick>
+					<OnEnter></OnEnter>
+					<OnLeave></OnLeave>
+				</Scripts>
+			</CheckButton>
+
+
+
+			<!--
+			<Button name="$parent_Reload" inherits="GameMenuButtonTemplate" text="Reload">
+				<Anchors><Anchor point="BOTTOM" relativePoint="BOTTOM"><Offset x="0" y="20"/></Anchor></Anchors>
+				<Scripts>
+					<OnClick></OnClick>
+				</Scripts>
+			</Button>
+			-->
+
+			<Button name="$parent_CloseButton" inherits="UIPanelCloseButton">
+				<Anchors><Anchor point="TOPRIGHT" relativePoint="TOPRIGHT"><Offset x="10" y="7"/></Anchor></Anchors>
+			</Button>
+
+			<Button name="$parent_Bug" inherits="GameMenuButtonTemplate" text="Bug Report">
+				<Anchors><Anchor point="BOTTOM" relativePoint="BOTTOM"><Offset x="0" y="15"/></Anchor></Anchors>
+				<Scripts>
+					<OnClick></OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString name="$parentText" inherits="GameFontHighlightSmall" text="" justifyH="LEFT" justifyV="TOP">
+					<Size x="280" y="0"/>
+					<Anchors><Anchor point="BOTTOM" relativePoint="BOTTOM"><Offset x="0" y="40"/></Anchor></Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad></OnLoad>
+		</Scripts>
+	</Frame>
+
+
+</Ui>
