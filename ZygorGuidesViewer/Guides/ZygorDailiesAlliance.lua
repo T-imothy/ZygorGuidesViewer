@@ -967,7 +967,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Howling Fjord\
 	step //1
 		goto Howling Fjord,24.6,58.9
 		.talk Anuniaq##24810
-		..accept The Way to His Heartunpack(arg)##11472
+		..accept The Way to His Heart...##11472
 	step //2
 		goto 28.9,74.8
 		.' Use Anuniaq's Net on the Schools of Tasty Reef Fish|use Anuniaq's Net##40946|tip They look like swarms of fish in the water.
@@ -982,7 +982,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Howling Fjord\
 	step //4
 		goto 24.6,58.9
 		.talk Anuniaq##24810
-		..turnin The Way to His Heartunpack(arg)##11472
+		..turnin The Way to His Heart...##11472
 ]])
 ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Howling Fjord\\Westguard Keep Dailies",[[
 	author support@zygorguides.com
@@ -1048,11 +1048,11 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Icecrown\\Icec
 		goto 87.1,75.8
 		.talk Crusade Commander Entari##30223
 		..turnin Scourge Tactics##13008
-		..accept If There Are Survivorsunpack(arg)##13044
+		..accept If There Are Survivors...##13044
 	step //10
 		goto 87.0,79.0
 		.talk Penumbrius##30227
-		..turnin If There Are Survivorsunpack(arg)##13044
+		..turnin If There Are Survivors...##13044
 		..accept Into The Wild Green Yonder##13045
 	step //11
 		goto 87.1,79.1
@@ -1333,8 +1333,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Icecrown\\Icec
 		.' Point 2: 64.4,55.4
 		.'Find The Skybreaker flying around in the sky|tip On you world map, it looks like a blue ship icon with 2 spiky balls on either side of it.
 		..talk High Captain Justin Bartlett##30344
-		unpack(arg)turnin The Skybreaker##13225
-		unpack(arg)accept The Broken Front##13231
+		...turnin The Skybreaker##13225
+		...accept The Broken Front##13231
 	step //73
 		'On the Skybreaker airship:
 		.talk Thassarian##29799
@@ -1431,14 +1431,14 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Icecrown\\Icec
 		.' Point 2: 64.4,55.4
 		.'Find The Skybreaker flying around in the sky|tip On you world map, it looks like a blue ship icon with 2 spiky balls on either side of it.
 		..talk High Captain Justin Bartlett##30824
-		unpack(arg)turnin The Broken Front##13231
-		unpack(arg)turnin Finish Me!##13232
-		unpack(arg)accept Your Attention, Please##13290
-		unpack(arg)accept unpack(arg)All the Help We Can Get.##13286
+		...turnin The Broken Front##13231
+		...turnin Finish Me!##13232
+		...accept Your Attention, Please##13290
+		...accept ...All the Help We Can Get.##13286
 	step //98
 		'On the Skybreaker airship:
 		.talk Thassarian##29799
-		..turnin unpack(arg)All the Help We Can Get.##13286
+		..turnin ...All the Help We Can Get.##13286
 		..accept Poke and Prod##13287
 	step //99
 		'On the Skybreaker airship:
@@ -1549,7 +1549,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Icecrown\\Icec
 		goto 44.1,24.7
 		.talk Baron Sliver##12887
 		..turnin It's All Fun and Games##12887
-		..accept I Have and Idea, But Firstunpack(arg)##12891
+		..accept I Have and Idea, But First...##12891
 	step //118
 		goto 43.7,24.8
 		.from Shadow Cultist##29717+
@@ -1563,7 +1563,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Icecrown\\Icec
 	step //119
 		goto 44.1,24.7
 		.talk Baron Sliver##29804
-		..turnin I Have and Idea, But Firstunpack(arg)##12891
+		..turnin I Have and Idea, But First...##12891
 		..accept Free Your Mind##12893
 	step //120
 		goto 43.4,19.1
@@ -2229,7 +2229,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Icecrown\\Icec
 		goto 19.5,48.2
 		.talk Lord-Commander Arete##29344
 		..turnin To the Rise with all Due Haste!##12806
-		..accept The Story Thus Farunpack(arg)##12807
+		..accept The Story Thus Far...##12807
 	step //257
 		goto 19.5,48.2
 		.talk Lord-Commander Arete##29344
@@ -2237,7 +2237,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Icecrown\\Icec
 	step //258
 		goto 19.5,48.2
 		.talk Lord-Commander Arete##29344
-		..turnin The Story Thus Farunpack(arg)##12807
+		..turnin The Story Thus Far...##12807
 		..accept Blood in the Water##12810
 	step //259
 		goto 19.7,48.4
@@ -4408,12 +4408,12 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Sholazar Basin
 		..turnin A Hero's Burden##12581
 		.' If you kill Zepik the Gorloc Hunter:
 		..talk Zepik the Gorloc Hunter##28668
-		unpack(arg)accept Frenzyheart Champion##12582 |daily
-		unpack(arg)accept Return of the Lich Hunter##12692
+		...accept Frenzyheart Champion##12582 |daily
+		...accept Return of the Lich Hunter##12692
 		.' If you kill Jaloot:
 		..talk Jaloot##28667
-		unpack(arg)accept Hand of the Oracles##12689 |daily
-		unpack(arg)accept Return of the Friendly Dryskin##12695
+		...accept Hand of the Oracles##12689 |daily
+		...accept Return of the Friendly Dryskin##12695
 	step //
 		goto 54.6,56.4
 		.talk High-Oracle Soo-say##28027
@@ -5230,7 +5230,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\The Storm Peak
 	step //205
 		goto 65.4,60.2
 		.talk King Jokkum##30105
-		..accept Jormuttar is Soo Fatunpack(arg)##13011
+		..accept Jormuttar is Soo Fat...##13011
 	step //206
 		goto 69.7,58.9
 		.' Use your Diamond Tipped Pick on Dead Iron Giants|use Diamond Tipped Pick##42424
@@ -5297,7 +5297,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\The Storm Peak
 	step //219
 		goto 65.4,60.2
 		.talk King Jokkum##30105
-		..turnin Jormuttar is Soo Fatunpack(arg)##13011
+		..turnin Jormuttar is Soo Fat...##13011
 	step //220
 		goto 65.4,60.2
 		.talk King Jokkum##30105
@@ -7810,7 +7810,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Icecrown\\Crus
 		goto 79.1,46.5
 		.talk Botanist Taerix##16514
 		..turnin Volatile Mutations##10302
-		..accept What Must Be Doneunpack(arg)##9293
+		..accept What Must Be Done...##9293
 		.talk Apprentice Vishael##20233
 		..accept Botanical Legwork##9799
 	step //7
@@ -7845,7 +7845,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Icecrown\\Crus
 	step //20
 		goto 79.1,46.5
 		.talk Botanist Taerix##16514
-		..turnin What Must Be Doneunpack(arg)##9293
+		..turnin What Must Be Done...##9293
 		..accept Healing the Lake##9294
 		.talk Apprentice Vishael##20233
 		..turnin Botanical Legwork##9799
@@ -8040,7 +8040,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Icecrown\\Crus
 		goto 47.1,50.6
 		.talk Exarch Menelaous##17116
 		..turnin Strange Findings##9455
-		..accept Nightstalker Clean Up, Isle 2unpack(arg)##9456
+		..accept Nightstalker Clean Up, Isle 2...##9456
 	step //72
 		goto 48.4,51.8
 		.talk Daedal##17215
@@ -8059,7 +8059,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Icecrown\\Crus
 	step //77
 		goto 47.1,50.6
 		.talk Exarch Menelaous##17116
-		..turnin Nightstalker Clean Up, Isle 2unpack(arg)##9456
+		..turnin Nightstalker Clean Up, Isle 2...##9456
 	step //78
 		goto 47,70.2
 		.talk Admiral Odesyus##17240
@@ -8081,11 +8081,11 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Icecrown\\Crus
 		goto 47,70.2
 		.talk Admiral Odesyus##17240
 		..turnin Show Gnomercy##9537
-		..accept Deliver Them From Evilunpack(arg)##9602
+		..accept Deliver Them From Evil...##9602
 	step //83
 		goto 47.1,50.6
 		.talk Exarch Menelaous##17116
-		..turnin Deliver Them From Evilunpack(arg)##9602
+		..turnin Deliver Them From Evil...##9602
 	step //84
 		goto 49.40,51.0
 		.talk Cryptographer Aurren##17232
@@ -8170,7 +8170,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Icecrown\\Crus
 	step //133
 		goto 44.7,23.6
 		.talk Gurf##17441
-		..accept Murlocsunpack(arg) Why Here? Why Now?##9562
+		..accept Murlocs... Why Here? Why Now?##9562
 	step //134
 		goto 33.8,25.7
 		.from Siltfin Hunter##17192+, Siltfin Murloc##17190+, Siltfin Oracle##17191+
@@ -8183,7 +8183,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Icecrown\\Crus
 	step //135
 		goto 44.7,23.6
 		.talk Gurf##17441
-		..turnin Murlocsunpack(arg) Why Here? Why Now?##9562
+		..turnin Murlocs... Why Here? Why Now?##9562
 		..turnin Gurf's Dignity##9564
 	step //136
 		goto 46.7,20.6
@@ -10201,7 +10201,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Netherdrake Mo
 	step //
 		goto 65.4,90.2
 		.talk Mistress of the Mines##23149
-		..accept Picking Up the Piecesunpack(arg)##11076
+		..accept Picking Up the Pieces...##11076
 	step //
 		'Go inside the mine to 65.1,87.5
 		.talk Dragonmaw Foreman##23376
@@ -10224,7 +10224,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Netherdrake Mo
 	step //
 		goto 65.4,90.2
 		.talk Mistress of the Mines##23149
-		..turnin Picking Up the Piecesunpack(arg)##11076
+		..turnin Picking Up the Pieces...##11076
 	step //
 		goto 66.0,86.5
 		.talk Yarzill the Merc##23141
@@ -10259,7 +10259,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Netherdrake Mo
 	step //
 		goto 65.9,87.2
 		.talk Ja'y Nosliw##22433
-		..accept Earning Your Wingsunpack(arg)##11063 |instant
+		..accept Earning Your Wings...##11063 |instant
 	step //
 		goto 65.2,85.7
 		.talk Murg "Oldie" Muckjaw##23340
@@ -10371,7 +10371,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Netherdrake Mo
 	step //
 		goto 65.4,90.2
 		.talk Mistress of the Mines##23149
-		..accept Picking Up the Piecesunpack(arg)##11076
+		..accept Picking Up the Pieces...##11076
 	step //
 		'Go inside the mine to 65.1,87.5
 		.talk Dragonmaw Foreman##23376
@@ -10394,7 +10394,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Netherdrake Mo
 	step //
 		goto 65.4,90.2
 		.talk Mistress of the Mines##23149
-		..turnin Picking Up the Piecesunpack(arg)##11076
+		..turnin Picking Up the Pieces...##11076
 	step //
 		goto Nagrand,12.7,38.9
 		.from Deathshadow Overlord##22393+, Deathshadow Warlock##22363+, Deathshadow Spellbinder##22342+, Deathshadow Archon##22343+, Deathshadow Acolyte##22341+
@@ -10441,7 +10441,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Netherdrake Mo
 		.from Arvoar the Rapacious##23267+ |tip He looks like a big Flayer mob that walks in a circle in this spot.
 		.collect Partially Digested Hand##32621 |n
 		.' Click the Partially Digested Hand in your bags |use Partially Digested Hand##32621
-		..accept A Job Unfinishedunpack(arg)##11041
+		..accept A Job Unfinished...##11041
 	step //
 		goto 70.2,84.3
 		.kill Barash the Den Mother |q 11041/2 |tip She looks like a big yellow Flayer mob that walks in a circle in this spot.
@@ -10451,7 +10451,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Netherdrake Mo
 	step //
 		goto 66.2,85.7
 		.talk Overlord Mor'ghor##23139
-		..turnin A Job Unfinishedunpack(arg)##11041
+		..turnin A Job Unfinished...##11041
 	step //
 		goto 56.3,59.6
 		.talk Arcanist Thelis##21955
@@ -10541,7 +10541,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Netherdrake Mo
 	step //
 		goto 65.4,90.2
 		.talk Mistress of the Mines##23149
-		..accept Picking Up the Piecesunpack(arg)##11076
+		..accept Picking Up the Pieces...##11076
 	step //
 		'Go inside the mine to 65.1,87.5
 		.talk Dragonmaw Foreman##23376
@@ -10564,7 +10564,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Netherdrake Mo
 	step //
 		goto 65.4,90.2
 		.talk Mistress of the Mines##23149
-		..turnin Picking Up the Piecesunpack(arg)##11076
+		..turnin Picking Up the Pieces...##11076
 	step //
 		goto Nagrand,12.7,38.9
 		.from Deathshadow Overlord##22393+, Deathshadow Warlock##22363+, Deathshadow Spellbinder##22342+, Deathshadow Archon##22343+, Deathshadow Acolyte##22341+
@@ -11035,7 +11035,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Events\\Love i
 		goto Stormwind City,60.6,76.4
 		.talk Marion Sutton##38325
 		..turnin Hot On The Trail##24849
-		..accept A Friendly Chatunpack(arg)##24657
+		..accept A Friendly Chat...##24657
 	step //
 		goto Stormwind City,27.43,34.8
 		.talk Snivel Rustrocket##37715
@@ -11044,7 +11044,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Events\\Love i
 	step //
 		goto Stormwind City,61.6,75.3
 		.talk Inspector Snip Snagglebolt##38066
-		..turnin A Friendly Chatunpack(arg)##24657
+		..turnin A Friendly Chat...##24657
 	next Zygor's Alliance Dailies Guides\\Events\\Love is in the Air (February 7th - 20th)\\Love is in the Air Dailies
 ]])
 ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Events\\Love is in the Air (February 7th - 20th)\\Love is in the Air Dailies",[[
@@ -12345,7 +12345,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Events\\Childr
 		'Use your Human Orphan Whistle to summon your Human Orphan |use Human Orphan Whistle##18598
 		.talk Human Orphan##14305
 		..turnin The Bough of the Eternals##1479
-		..accept You Scream, I Screamunpack(arg)##4822
+		..accept You Scream, I Scream...##4822
 		..accept Jaina's Autograph##558
 	step //15
 		goto Darnassus,30.3,41.4 |n
@@ -12381,7 +12381,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Dailies Guides\\Events\\Childr
 	step //23
 		'Use your Human Orphan Whistle to summon your Human Orphan |use Human Orphan Whistle##18598
 		.talk Human Orphan##14305
-		..turnin You Scream, I Screamunpack(arg)##4822
+		..turnin You Scream, I Scream...##4822
 		..accept A Warden of the Alliance##171
 	step //24
 		goto Stormwind City,56.3,54.0

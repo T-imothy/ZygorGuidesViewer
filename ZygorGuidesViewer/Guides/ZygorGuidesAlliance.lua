@@ -3106,7 +3106,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 		goto 79.1,46.5
 		.talk Botanist Taerix##16514
 		..turnin Volatile Mutations##10302
-		..accept What Must Be Doneunpack(arg)##9293
+		..accept What Must Be Done...##9293
 		.talk Apprentice Vishael##20233
 		..accept Botanical Legwork##9799
 	step //7
@@ -3174,7 +3174,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 	step //20
 		goto 79.1,46.5
 		.talk Botanist Taerix##16514
-		..turnin What Must Be Doneunpack(arg)##9293
+		..turnin What Must Be Done...##9293
 		..accept Healing the Lake##9294
 		.talk Apprentice Vishael##20233
 		..turnin Botanical Legwork##9799
@@ -3407,7 +3407,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 		goto 47.1,50.6
 		.talk Exarch Menelaous##17116
 		..turnin Strange Findings##9455
-		..accept Nightstalker Clean Up, Isle 2unpack(arg)##9456
+		..accept Nightstalker Clean Up, Isle 2...##9456
 	step //72
 		goto 48.4,51.8
 		.talk Daedal##17215
@@ -3428,7 +3428,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 	step //77
 		goto 47.1,50.6
 		.talk Exarch Menelaous##17116
-		..turnin Nightstalker Clean Up, Isle 2unpack(arg)##9456
+		..turnin Nightstalker Clean Up, Isle 2...##9456
 	step //78
 		goto 47,70.2
 		.talk Admiral Odesyus##17240
@@ -3450,11 +3450,11 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 		goto 47,70.2
 		.talk Admiral Odesyus##17240
 		..turnin Show Gnomercy##9537
-		..accept Deliver Them From Evilunpack(arg)##9602
+		..accept Deliver Them From Evil...##9602
 	step //82
 		goto 47.1,50.6
 		.talk Exarch Menelaous##17116
-		..turnin Deliver Them From Evilunpack(arg)##9602
+		..turnin Deliver Them From Evil...##9602
 	step //83
 		ding 9
 	step //84
@@ -3696,7 +3696,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 	step //133
 		goto 44.7,23.6
 		.talk Gurf##17441
-		..accept Murlocsunpack(arg) Why Here? Why Now?##9562
+		..accept Murlocs... Why Here? Why Now?##9562
 	step //134
 		goto 33.8,25.7
 		.from Siltfin Hunter##17192+, Siltfin Murloc##17190+, Siltfin Oracle##17191+
@@ -3709,7 +3709,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 	step //135
 		goto 44.7,23.6
 		.talk Gurf##17441
-		..turnin Murlocsunpack(arg) Why Here? Why Now?##9562
+		..turnin Murlocs... Why Here? Why Now?##9562
 		..turnin Gurf's Dignity##9564
 	step //136
 		goto 46.7,20.6
@@ -4401,13 +4401,13 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Death Knight 
 		goto 56.3,79.8
 		.talk Orbaz Bloodbane##28914
 		..turnin The Scarlet Onslaught Emerges##12756
-		..accept Scarlet Armies Approachunpack(arg)##12757
+		..accept Scarlet Armies Approach...##12757
 	step //86
 		'Click the Portal to Acherus to go to Ebon Hold|goto 50.2,32.6,0.5|noway|c
 	step //87
 		goto 48.9,29.7
 		.talk Highlord Darion Mograine##28444
-		..turnin Scarlet Armies Approachunpack(arg)##12757
+		..turnin Scarlet Armies Approach...##12757
 		..accept The Scarlet Apocalypse##12778
 	step //88
 		goto 52.1,35|n
@@ -4416,7 +4416,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Death Knight 
 		goto 53.6,36.9
 		.talk The Lich King##29110
 		..turnin The Scarlet Apocalypse##12778
-		..accept An End To All Thingsunpack(arg)##12779
+		..accept An End To All Things...##12779
 	step //90
 		'Click the Horn of the Frostbrood in your bags|use Horn of the Frostbrood##39700
 		.' This will summon a dragon for you to ride around on
@@ -4428,7 +4428,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Death Knight 
 	step //92
 		goto 53.6,36.9
 		.talk The Lich King##29110
-		..turnin An End To All Thingsunpack(arg)##12779
+		..turnin An End To All Things...##12779
 		..accept The Lich King's Command##12800
 	step //93
 		goto 50.4,31.9|n
@@ -9209,8 +9209,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Levels (40-45
 		..accept Study of the Elements: Rock (1)##710
 		..accept Coolant Heads Prevail##713
 		..turnin Coolant Heads Prevail##713
-		..accept Gyrounpack(arg) What?##714
-		..turnin Gyrounpack(arg) What?##714
+		..accept Gyro... What?##714
+		..turnin Gyro... What?##714
 		.talk Lucien Tosselwrench##2920
 		..accept Liquid Stone##715
 		..turnin Liquid Stone##715
@@ -10689,9 +10689,9 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Levels (50-55
 		.talk Squire Maltrake##8509
 		..turnin Set Them Ablaze!##3463
 		.' Click the small grey chest on the ground
-		..accept Trinketsunpack(arg)##3481
+		..accept Trinkets...##3481
 		.' Click the chest again
-		..turnin Trinketsunpack(arg)##3481
+		..turnin Trinkets...##3481
 		.' Open the Hoard of the Black Dragonflight in your bags|use Hoard of the Black Dragonflight##10569
 		.' Make sure to save the Black Dragonflight Molt|collect Black Dragonflight Molt##10575|q 4022/1 |future
 	step //80
@@ -12568,7 +12568,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Outland (60-6
 	step //52
 		goto 49.2,74.8
 		.talk "Screaming" Screed Luckheed##19367
-		..accept In Case of Emergencyunpack(arg)##10161
+		..accept In Case of Emergency...##10161
 		.talk Legassi##19344
 		..accept Ravager Egg Roundup##9349
 	step //53
@@ -12600,7 +12600,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Outland (60-6
 	step //58
 		goto 49.2,74.8
 		.talk "Screaming" Screed Luckheed##19367
-		..turnin In Case of Emergencyunpack(arg)##10161
+		..turnin In Case of Emergency...##10161
 		..accept Voidwalkers Gone Wild##9351
 		.talk Legassi##19344
 		..turnin Smooth as Butter##9356
@@ -12946,7 +12946,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Levels (62-64
 	step //17
 		goto 54.0,63.5
 		.talk Anchorite Barada##22431
-		..'Click 'I am readyunpack(arg)'
+		..'Click 'I am ready...'
 		..'Target the purple skulls and oozes
 		..'Use the Ritual Prayer Beads when enemies are in the room|use Ritual Prayer Beads##31828
 		..'After the exorcism is done, talk Colonel Jules on the bed to save him|goal Colonel Jules Saved|q 10935/1
@@ -14864,7 +14864,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Levels (66-68
 	step //172
 		goto 62,39.5
 		.talk Tree Warden Chawn##22007
-		..accept A Time for Negotiationunpack(arg)##10682
+		..accept A Time for Negotiation...##10682
 	step //173
 		goto 61.7,39.6
 		.talk Fhyn Leafshadow##22216
@@ -14964,8 +14964,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Levels (68-70
 	step //2
 		goto 62,39.5
 		.talk Tree Warden Chawn##22007
-		..turnin A Time for Negotiationunpack(arg)##10682
-		..accept unpack(arg)and a Time for Action##10713
+		..turnin A Time for Negotiation...##10682
+		..accept ...and a Time for Action##10713
 		.talk Samia Inkling##21983
 		..accept Poaching from Poachers##10717
 	step //3
@@ -14983,7 +14983,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Levels (68-70
 		..turnin Poaching from Poachers##10717
 		..accept Whelps of the Wyrmcult##10747
 		.talk Tree Warden Chawn##22007
-		..turnin unpack(arg)and a Time for Action##10713
+		..turnin ...and a Time for Action##10713
 		..turnin Did You Get The Note?##10719
 		..accept Wyrmskull Watcher##10894
 	step //5
@@ -15971,7 +15971,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (70
 	step //13
 		goto 57.5,69.1
 		.' Click the Cultist Shrine|tip It looks like a small candle shrine on the ground downstairs in this ship, next to the wall.
-		..accept Cultists Among Us##11920 // 11720 is the same quest, but it was 11920 for meunpack(arg) odd.
+		..accept Cultists Among Us##11920 // 11720 is the same quest, but it was 11920 for me... odd.
 	step //14
 		goto 57.8,69.2
 		.talk Captain "Lefty" Lugsail##25298
@@ -16254,7 +16254,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (70
 		goto 57,44
 		.' He walks around the small pond in the middle of the camp
 		.talk Killinger the Den Watcher##25812
-		..accept Ned, Lord of Rhinosunpack(arg)##11884
+		..accept Ned, Lord of Rhinos...##11884
 	step //75
 		goto 56.8,44
 		.talk Zaza##25811
@@ -16294,7 +16294,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (70
 		goto 57,44
 		.' He walks around the small pond in the middle of the camp
 		.talk Killinger the Den Watcher##25812
-		..turnin Ned, Lord of Rhinosunpack(arg)##11884
+		..turnin Ned, Lord of Rhinos...##11884
 	step //84
 		goto 56.8,44
 		.talk Zaza##25811
@@ -16336,14 +16336,14 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (70
 		goto 57.8,55.1
 		.talk Hierophant Liandra##25838
 		..turnin Not On Our Watch##11871
-		..accept The Nefarious Clam Masterunpack(arg)##11872
+		..accept The Nefarious Clam Master...##11872
 	step //93
 		goto 61.5,66.5
 		.kill Clam Master K##25800|q 11872/1
 	step //94
 		goto 57.3,44.1
 		.talk Hierophant Cenius##25810
-		..turnin The Nefarious Clam Masterunpack(arg)##11872
+		..turnin The Nefarious Clam Master...##11872
 	step //95
 		goto 56.8,44
 		.talk Zaza##25811
@@ -16598,7 +16598,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (70
 		.kill Coldarra Spellbinders|n
 		.get Scintillating Fragment|n
 		.' Click the Scintillating Fragment in your bags|use Scintillating Fragment##35648
-		..accept Puzzlingunpack(arg)##11941
+		..accept Puzzling...##11941
 	step //151
 		goto 28.3,28.5
 		.' Click the Coldarra Geological Monitor|tip It looks like a blue sphere on the ground at the base of the building.
@@ -16635,7 +16635,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (70
 		.talk Raelorasz##26117
 		..turnin Basic Training##11918
 		..accept Hatching a Plan##11936
-		..turnin Puzzlingunpack(arg)##11941
+		..turnin Puzzling...##11941
 		..accept The Cell##11943
 	step //158
 		goto 33.5,34.4
@@ -16787,12 +16787,12 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (70
 		goto 57.6,18.7
 		.talk Crafty Wobblesprout##25477
 		..turnin Dirty, Stinkin' Snobolds!##11645
-		..accept Just a Few More Thingsunpack(arg)##11650
+		..accept Just a Few More Things...##11650
 	step //192
 		goto 58.5,17.6
 		.kill Fizzcrank Mechagnomes|n
 		..' Use the Re-Cursive Transmatter Injection on their corpses|use Re-Cursive Transmatter Injection##34973
-		unpack(arg)' Curse & port 6 Fizzcrank Gnomes|goal 6 Fizzcrank Gnome cursed & ported|q 11712/1
+		...' Curse & port 6 Fizzcrank Gnomes|goal 6 Fizzcrank Gnome cursed & ported|q 11712/1
 		.' Click Fizzcrank Spare Parts
 		..get 15 Fizzcrank Spare Parts|q 11710/1
 		info Remember to salvage all corpses for spare parts. Note: don't salvage Mechagnomes until you've ported 6 of them, as it destroys their bodies.|only if skill('Engineering')>0
@@ -16800,8 +16800,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (70
 		goto 58.5,17.6
 		.kill mechanical mobs|n
 		..get The Ultrasonic Screwdriver|n
-		unpack(arg)' Click The Ultrasonic Screwdriver|use The Ultrasonic Screwdriver##34984
-		unpack(arg).accept The Ultrasonic Screwdriver##11729
+		...' Click The Ultrasonic Screwdriver|use The Ultrasonic Screwdriver##34984
+		....accept The Ultrasonic Screwdriver##11729
 	step //193
 		goto 57.6,18.7
 		.talk Crafty Wobblesprout##25477
@@ -17030,9 +17030,9 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (70
 	step //244
 		goto 57.6,18.7
 		.talk Crafty Wobblesprocket##25477
-		..turnin Just a Few More Thingsunpack(arg)##11650
+		..turnin Just a Few More Things...##11650
 		..turnin Master and Servant##11730
-		..accept Hahunpack(arg) You're Not So Big Now!##11653
+		..accept Hah... You're Not So Big Now!##11653
 	step //245
 		goto 54.2,13|n
 		.' The path down to Hah... You're Not So Big Now! starts here|goto 54.2,13,0.3|noway|c
@@ -17044,7 +17044,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (70
 	step //247
 		'Go outside to 57.6,18.7|goto 57.6,18.7
 		.talk Crafty Wobblesprocket##25477
-		..turnin Hahunpack(arg) You're Not So Big Now!##11653
+		..turnin Hah... You're Not So Big Now!##11653
 		..accept Plan B##11658
 	step //248
 		goto 47.9,21.3
@@ -17130,7 +17130,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (70
 		goto 43.5,14
 		.talk King Mrgl-Mrgl##25197
 		..turnin The Spare Suit##11565
-		..accept Surrenderunpack(arg) Not!##11566
+		..accept Surrender... Not!##11566
 	step //267
 		'Go southwest to Winterfin Village|n
 		.' Use King Mrgl-Mrgl's Spare Suit|havebuff INV_Misc_Head_Murloc_01|use King Mrgl-Mrgl's Spare Suit##34620|q 11566
@@ -17162,7 +17162,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (70
 	step //275
 		goto 43.5,14
 		.talk King Mrgl-Mrgl##25197
-		..turnin Surrenderunpack(arg) Not!##11566
+		..turnin Surrender... Not!##11566
 		..turnin Escape from the Winterfin Caverns##11570
 	step //276
 		goto 57.6,18.7
@@ -17204,14 +17204,14 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (70
 		goto 73.4,18.8
 		.talk Bixie Wrenchshanker##25705
 		..turnin Check in With Bixie##11692
-		..accept Oh Greatunpack(arg) Plagued Magnataur!##11693
+		..accept Oh Great... Plagued Magnataur!##11693
 	step //285
 		goto 73.3,19.6
 		.kill 10 Plagued Magnataur|q 11693/1
 	step //286
 		goto 73.4,18.8
 		.talk Bixie Wrenchshanker##25705
-		..turnin Oh Greatunpack(arg) Plagued Magnataur!##11693
+		..turnin Oh Great... Plagued Magnataur!##11693
 		..accept There's Something Going On In Those Caves##11694
 	step //287
 		goto 74.7,14.1
@@ -17306,12 +17306,12 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (70
 	step //309
 		goto Howling Fjord,61.1,62.7
 		.talk Macalroy##23547
-		..accept Hell Has Frozen Overunpack(arg)##11228
+		..accept Hell Has Frozen Over...##11228
 	step //310
 		goto 60.5,61.1
 		.talk Vice Admiral Keller##23546
-		..turnin Hell Has Frozen Overunpack(arg)##11228
-		..accept If Valgarde Fallsunpack(arg)##11243
+		..turnin Hell Has Frozen Over...##11228
+		..accept If Valgarde Falls...##11243
 	step //311
 		goto 59.8,63.2
 		.talk Pricilla Winterwind##23736
@@ -17326,7 +17326,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (70
 	step //314
 		goto 60.5,61.1
 		.talk Vice Admiral Keller##23546
-		..turnin If Valgarde Fallsunpack(arg)##11243
+		..turnin If Valgarde Falls...##11243
 		..accept Rescuing the Rescuers##11244	
 	step //315
 		goto 58.1,57
@@ -17392,14 +17392,14 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (70
 		goto 56.6,52.4
 		.talk Zedd##24145
 		..turnin Zedd's Probably Dead##11274
-		..accept And Then There Were Twounpack(arg)##11276
+		..accept And Then There Were Two...##11276
 	step //329
 		goto 56.6,49.6|n
 		.' The entrance to the Utgarde Catacombs starts here|goto 56.6,49.6,0.5|noway|c
 	step //330
 		'Go inside the cave to 56.9,53.8|goto 56.9,53.8
 		.talk Glorenfeld##24150
-		..turnin And Then There Were Twounpack(arg)##11276
+		..turnin And Then There Were Two...##11276
 		..accept The Depths of Depravity##11277
 	step //331
 		goto 57.3,54.5
@@ -17504,7 +17504,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (72
 		goto 60.1,62.4
 		.talk Guard Captain Zorek##23728
 		..turnin Locating the Mechanism##11426
-		..accept Meet Lieutenant Icehammerunpack(arg)##11427
+		..accept Meet Lieutenant Icehammer...##11427
 	step //7
 		goto 60.8,61.5|n
 		.talk McGoyver##24040
@@ -17576,7 +17576,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (72
 	step //22
 		goto 64.4,47
 		.talk Lieutenant Icehammer##24634
-		..turnin Meet Lieutenant Icehammerunpack(arg)##11427
+		..turnin Meet Lieutenant Icehammer...##11427
 		..accept Drop It then Rock It!##11429
 	step //23
 		goto 65,39.9
@@ -17601,7 +17601,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (72
 		goto 64.4,47
 		.talk Lieutenant Icehammer##24634
 		..turnin Harpoon Master Yavus##11430
-		..accept It Goes to 11unpack(arg)##11421
+		..accept It Goes to 11...##11421
 	step //28
 		goto 64.8,52.7
 		.' Use your Harpoon Control Mechanism next to the big metal harpoon guns|use Harpoon Control Mechanism##34032
@@ -17614,7 +17614,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (72
 	step //29
 		goto 64.4,47
 		.talk Lieutenant Icehammer##24634
-		..turnin It Goes to 11unpack(arg)##11421
+		..turnin It Goes to 11...##11421
 		..accept Let's Go Surfing Now##11436
 	step //30
 		goto 78.8,48.9
@@ -17936,7 +17936,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (72
 	step //102
 		goto 24.6,58.9
 		.talk Anuniaq##24810
-		..accept The Way to His Heartunpack(arg)##11472
+		..accept The Way to His Heart...##11472
 	step //103
 		goto 28.9,74.8
 		.' Use Anuniaq's Net on the Schools of Tasty Reef Fish|use Anuniaq's Net##40946|tip They look like swarms of fish in the water.
@@ -18042,7 +18042,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (72
 	step //125
 		goto 24.6,58.9
 		.talk Anuniaq##24810
-		..turnin The Way to His Heartunpack(arg)##11472
+		..turnin The Way to His Heart...##11472
 	step //126
 		'Go across the Ancient Lift to 37.4,51.9|goto 37.4,51.9
 		.talk Ember Clutch Ancient##23870
@@ -18117,7 +18117,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (72
 		goto 28.9,44.2
 		.talk Mage-Lieutenant Malister##23888
 		..turnin Mage-Lieutenant Malister##11187
-		..accept Two Wrongsunpack(arg)##11188
+		..accept Two Wrongs...##11188
 	step //144
 		goto 36.1,47.6
 		.' Use Malister's Frost Wand on Proto-Drakes|use Malister's Frost Wand##33119
@@ -18125,7 +18125,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (72
 	step //145
 		'Go inside the fort to 28.9,44.2|goto 28.9,44.2
 		.talk Mage-Lieutenant Malister##23888
-		..turnin Two Wrongsunpack(arg)##11188
+		..turnin Two Wrongs...##11188
 	step //146
 		goto 28.8,44.1
 		.talk Captain Adams##23749
@@ -18215,7 +18215,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (72
 		goto 30.8,41.6
 		.talk Peppy Wrongnozzle##24283
 		..turnin Mission: Forsaken Intel##11328
-		..accept Absholutelyunpack(arg) Thish Will Work!##11330
+		..accept Absholutely... Thish Will Work!##11330
 	step //167
 		goto 29.3,44.1|n
 		.' The path down to Absholutely... Thish Will Work! starts here|goto 29.3,44.1,0.5|noway|c
@@ -18226,12 +18226,12 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (72
 	step //169
 		goto 30.8,41.6
 		.talk Peppy Wrongnozzle##24283
-		..turnin Absholutelyunpack(arg) Thish Will Work!##11330
-		..accept You Tell Him unpack(arg)Hic!##11331
+		..turnin Absholutely... Thish Will Work!##11330
+		..accept You Tell Him ...Hic!##11331
 	step //170
 		'Go into the fort to 28.8,44.1|goto 28.8,44.1
 		.talk Captain Adams##23749
-		..turnin You Tell Him unpack(arg)Hic!##11331
+		..turnin You Tell Him ...Hic!##11331
 		..accept Mission: Plague This!##11332
 	step //171
 		goto 31.3,44
@@ -19996,7 +19996,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (74
 	step //197
 		goto 31.8,59.6
 		.' Click the Amberseed|tip It's a small bucket with seeds in it, to left as you enter the door, under the stairs.
-		..accept Mmmunpack(arg) Amberseeds!##12225
+		..accept Mmm... Amberseeds!##12225
 	step //198
 		goto 31.8,60.2
 		.talk Lieutenant Dumont##26875
@@ -20005,7 +20005,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (74
 	step //199
 		goto 32.1,60
 		.talk Master Woodsman Anderhol##27277
-		..turnin Mmmunpack(arg) Amberseeds!##12225
+		..turnin Mmm... Amberseeds!##12225
 		..accept Just Passing Through##12226
 		..accept Replenishing the Storehouse##12212
 		..accept Them or Us!##12215
@@ -20312,7 +20312,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (74
 		.talk Lieutenant Dumont##26875
 		..turnin A Swift Response##12310
 		..turnin Descent into Darkness##12105
-		..accept Report to Gryan Stoutmantleunpack(arg) Again##12109
+		..accept Report to Gryan Stoutmantle... Again##12109
 	step //268
 		goto 31.2,59.5
 		.talk Hierophant Thayreen##27295
@@ -20381,7 +20381,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (74
 	step //284
 		goto 59.4,26
 		.talk Captain Gryan Stoutmantle##26212
-		..turnin Report to Gryan Stoutmantleunpack(arg) Again##12109
+		..turnin Report to Gryan Stoutmantle... Again##12109
 		..accept Hollowstone Mine##12158
 		..accept Softening the Blow##11998
 	step //285
@@ -20635,7 +20635,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (74
 	step //342
 		goto 73.9,34.1
 		.talk Kraz##26886
-		..accept It Takes Gutsunpack(arg).##12116
+		..accept It Takes Guts....##12116
 	step //343
 		goto 72.7,37.6
 		.kill Longhoof Grazers|n
@@ -20690,7 +20690,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (74
 	step //354
 		goto 73.9,34.1
 		.talk Kraz##26886
-		..turnin It Takes Gutsunpack(arg).##12116
+		..turnin It Takes Guts....##12116
 		..accept Drak'aguul's Mallet##12120
 	step //355
 		goto 73.8,34
@@ -20872,7 +20872,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (76
 		goto 77.1,48.6
 		.talk Raegar Breakbrow##26883
 		..turnin We Have the Power##12131
-		..accept unpack(arg) Or Maybe We Don't##12138
+		..accept ... Or Maybe We Don't##12138
 	step //33
 		goto 77,48.4
 		.talk Mountaineer Kilian##26885
@@ -20891,7 +20891,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (76
 	step //36
 		goto 77.1,48.6
 		.talk Raegar Breakbrow##26883
-		..turnin unpack(arg) Or Maybe We Don't##12138
+		..turnin ... Or Maybe We Don't##12138
 		..accept The Iron Thane and His Anvil##12153
 		..accept Blackout##12154
 	step //37
@@ -21008,12 +21008,12 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (76
 		.' Collect 10 Hair Samples|goal 10 Hair Samples Collected|q 12630/1
 		.get an Unliving Choker|n
 		.' Click the Unliving Choker in your bags|use Unliving Choker##38660
-		..accept An Invitation, of Sortsunpack(arg)##12631
+		..accept An Invitation, of Sorts...##12631
 	step //65
 		goto 14.1,73.8
 		.talk Stefan Vadu##28518
 		..turnin Kickin' Nass and Takin' Manes##12630
-		..turnin An Invitation, of Sortsunpack(arg)##12631
+		..turnin An Invitation, of Sorts...##12631
 		..accept Near Miss##12637
 	step //66
 		goto 14.3,74
@@ -23211,7 +23211,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (78
 	step //205
 		goto 65.4,60.2
 		.talk King Jokkum##30105
-		..accept Jormuttar is Soo Fatunpack(arg)##13011
+		..accept Jormuttar is Soo Fat...##13011
 	step //206
 		goto 69.7,58.9
 		.' Use your Diamond Tipped Pick on Dead Iron Giants|use Diamond Tipped Pick##42424
@@ -23278,7 +23278,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Northrend (78
 	step //219
 		goto 65.4,60.2
 		.talk King Jokkum##30105
-		..turnin Jormuttar is Soo Fatunpack(arg)##13011
+		..turnin Jormuttar is Soo Fat...##13011
 	step //220
 		goto 65.4,60.2
 		.talk King Jokkum##30105

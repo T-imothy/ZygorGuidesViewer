@@ -1868,7 +1868,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 		.talk Gar'Thok##3139
 		..turnin Vanquish the Betrayers##784
 		..accept Encroachment##837
-		..accept From The Wreckageunpack(arg).##825
+		..accept From The Wreckage....##825
 		..turnin The Admiral's Orders (1)##830
 		..accept The Admiral's Orders (2)##831
 	step //63
@@ -1893,7 +1893,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 	step //67
 		goto 51.9,43.5
 		.talk Gar'Thok##3139
-		..turnin From The Wreckageunpack(arg).##825
+		..turnin From The Wreckage....##825
 	step //68
 		goto 44.6,48.6
 		.' Be careful of Captain Flat Tusk. He's a level 11 elite that walks around this area.
@@ -2233,8 +2233,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 		.talk Kor'ghan##3189
 		..turnin Finding the Antidote##813
 	step //146
-		goto 34.3,36.3
-		.talk Vol'jin##10540
+		goto 31.8,37.8
+		.talk Nazgrel##3230
 		..turnin The Admiral's Orders##831
 	step //147
 		goto 31.8,37.8
@@ -2706,7 +2706,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 		goto 51.9,43.5
 		.talk Gar'Thok##3139
 		..turnin Vanquish the Betrayers##784
-		..accept From The Wreckageunpack(arg).##825
+		..accept From The Wreckage....##825
 		..turnin The Admiral's Orders (1)##830
 		..accept The Admiral's Orders (2)##831
 		..accept Encroachment##837
@@ -2732,7 +2732,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 	step //69
 		goto 51.9,43.5
 		.talk Gar'Thok##3139
-		..turnin From The Wreckageunpack(arg).##825
+		..turnin From The Wreckage....##825
 	step //70
 		goto 44.6,48.6
 		.' Be careful of Captain Flat Tusk. He's a level 11 elite that walks around this area.
@@ -3025,8 +3025,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 		.talk Kor'ghan##3189
 		..turnin Finding the Antidote##813
 	step //138
-		goto 34.3,36.3
-		.talk Vol'jin
+		goto 31.8,37.8
+		.talk Nazgrel##3230
 		..turnin The Admiral's Orders##831
 	step //139
 		goto 34.3,36.3
@@ -3499,7 +3499,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Blood Elf (1-13)
 	step //57
 		goto 30.2,58.3
 		.talk Hathvelion Sungaze##15920
-		..accept Fish Heads, Fish Headsunpack(arg)##8884
+		..accept Fish Heads, Fish Heads...##8884
 	step //58
 		goto 27.3,57.2
 		.from Grimscale Forager##15670, Grimscale Seer##15950
@@ -3510,7 +3510,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Blood Elf (1-13)
 	step //59
 		goto 30.2,58.3
 		.talk Hathvelion Sungaze##15920
-		..turnin Fish Heads, Fish Headsunpack(arg)##8884
+		..turnin Fish Heads, Fish Heads...##8884
 	step //60
 		goto 36.4,66.7
 		.talk Captain Kelisendra##15921
@@ -4409,13 +4409,13 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Death Knight (55
 		goto 56.3,79.8
 		.talk Orbaz Bloodbane##28914
 		..turnin The Scarlet Onslaught Emerges##12756
-		..accept Scarlet Armies Approachunpack(arg)##12757
+		..accept Scarlet Armies Approach...##12757
 	step //85
 		'Click the Portal to Acherus to go to Ebon Hold|goto 50.2,32.6,0.5|noway|c
 	step //86
 		goto 48.9,29.7
 		.talk Highlord Darion Mograine##28444
-		..turnin Scarlet Armies Approachunpack(arg)##12757
+		..turnin Scarlet Armies Approach...##12757
 		..accept The Scarlet Apocalypse##12778
 	step //87
 		goto 52.1,35|n
@@ -4424,7 +4424,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Death Knight (55
 		goto 53.6,36.9
 		.talk The Lich King##29110
 		..turnin The Scarlet Apocalypse##12778
-		..accept An End To All Thingsunpack(arg)##12779
+		..accept An End To All Things...##12779
 	step //89
 		'Click the Horn of the Frostbrood in your bags|use Horn of the Frostbrood##39700
 		.' This will summon a dragon for you to ride around on
@@ -4436,7 +4436,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Death Knight (55
 	step //91
 		goto 53.6,36.9
 		.talk The Lich King##29110
-		..turnin An End To All Thingsunpack(arg)##12779
+		..turnin An End To All Things...##12779
 		..accept The Lich King's Command##12800
 	step //92
 		goto 50.4,31.9|n
@@ -7512,7 +7512,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (30-35)",
 		goto 51.3,45.9
 		.talk Craven Drok##5639
 		..accept Alliance Relations (1)##1431
-// and maybe somewhere hereunpack(arg)
+// and maybe somewhere here...
 //  goto 48.5,45.5
 //  .talk Zevrost##3326
 //  ..accept In Search of Menara Voidrender##4737
@@ -8832,8 +8832,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (40-45)",
 		..accept Study of the Elements: Rock (1)##710
 		..accept Coolant Heads Prevail##713
 		..turnin Coolant Heads Prevail##713
-		..accept Gyrounpack(arg) What?##714
-		..turnin Gyrounpack(arg) What?##714
+		..accept Gyro... What?##714
+		..turnin Gyro... What?##714
 		.talk Lucien Tosselwrench##2920
 		..accept Liquid Stone##715
 		..turnin Liquid Stone##715
@@ -10581,9 +10581,9 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (50-55)",
 		.talk Squire Maltrake##8509
 		..turnin Set Them Ablaze!##3463
 		.' Click the small grey chest on the ground
-		..accept Trinketsunpack(arg)##3481
+		..accept Trinkets...##3481
 		.' Click the chest again
-		..turnin Trinketsunpack(arg)##3481
+		..turnin Trinkets...##3481
 		.' Open the Hoard of the Black Dragonflight in your bags|use Hoard of the Black Dragonflight##10569
 		.' Make sure to save the Black Dragonflight Molt|collect Black Dragonflight Molt##10575|q 4022 |future
 	step //73
@@ -10850,8 +10850,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (50-55)",
 	step //136
 		goto 47.5,73.1
 		.talk Chemist Fuely##10136
-		..accept A Sample of Slimeunpack(arg)##4293
-		..accept unpack(arg) and a Batch of Ooze##4294
+		..accept A Sample of Slime...##4293
+		..accept ... and a Batch of Ooze##4294
 	step //137
 		'Fly to Revantusk Village|goto The Hinterlands,81.7,81.9,0.1|noway|c
 	step //138
@@ -11908,8 +11908,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (55-60)",
 	step //156
 		goto 47.5,73.1
 		.talk Chemist Fuely##10136
-		..turnin A Sample of Slimeunpack(arg)##4293
-		..turnin unpack(arg) and a Batch of Ooze##4294
+		..turnin A Sample of Slime...##4293
+		..turnin ... and a Batch of Ooze##4294
 	step //157
 		goto 48.4,71.8
 		.talk Chemist Cuely##8390
@@ -12195,7 +12195,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Outland (60-62)"
 	step //10
 		goto 55.2,38.8
 		.talk Megzeg Nukklebust##21283
-		..accept I Workunpack(arg) For the Horde!##10086
+		..accept I Work... For the Horde!##10086
 	step //11
 		home Thrallmar
 	step //12
@@ -12333,8 +12333,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Outland (60-62)"
 	step //35
 		goto 55.2,38.8
 		.talk Megzeg Nukklebust##21283
-		..turnin I Workunpack(arg) For the Horde!##10086
-		..accept Burn It Upunpack(arg) For the Horde!##10087
+		..turnin I Work... For the Horde!##10086
+		..accept Burn It Up... For the Horde!##10087
 	step //36
 		goto 55.1,36.4
 		.talk Vurtok Axebreaker##21256
@@ -12510,7 +12510,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Outland (60-62)"
 		goto 49.2,74.8
 		.talk "Screaming" Screed Luckheed##19367
 		..turnin Investigate the Crash##10213
-		..accept In Case of Emergencyunpack(arg)##10161
+		..accept In Case of Emergency...##10161
 		.talk Legassi##19344
 		..accept Ravager Egg Roundup##9349
 	step //72
@@ -12520,7 +12520,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Outland (60-62)"
 	step //73
 		goto 49.2,74.8
 		.talk "Screaming" Screed Luckheed##19367
-		..turnin In Case of Emergencyunpack(arg)##10161
+		..turnin In Case of Emergency...##10161
 		..accept Voidwalkers Gone Wild##9351
 	step //74
 		goto 49.5,81.8
@@ -12706,7 +12706,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Outland (60-62)"
 	step //116
 		goto 55.2,38.8
 		.talk Megzeg Nukklebust##21283
-		..turnin Burn It Upunpack(arg) For the Horde!##10087
+		..turnin Burn It Up... For the Horde!##10087
 	step //117
 		goto 33.6,43.5
 		.' Click the Fel Orc Corpse
@@ -14307,7 +14307,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Outland (66-68)"
 		.talk Farseer Corhuk##18067
 		..accept The Missing War Party##9864
 		.talk Farseer Margadesh##18068
-		..accept Murkblood Leadersunpack(arg)##9867
+		..accept Murkblood Leaders...##9867
 	step //33
 		goto 51.9,34.8
 		.talk the Consortium Recruiter##18335
@@ -14397,7 +14397,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Outland (66-68)"
 		goto 32.4,36.1
 		.talk Saurfang the Younger##18229
 		..turnin Once Were Warriors##9865
-		..accept He Will Walk The Earthunpack(arg)##9866
+		..accept He Will Walk The Earth...##9866
 	step //48
 		goto 30.8,58.1
 		.talk Zerid##18276
@@ -14498,9 +14498,9 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Outland (66-68)"
 		.talk Farseer Kurkush##18066
 		..turnin Vile Idolatry##9863
 		.talk Farseer Corhuk##18067
-		..turnin He Will Walk The Earthunpack(arg)##9866
+		..turnin He Will Walk The Earth...##9866
 		.talk Farseer Margadesh##18068
-		..turnin Murkblood Leadersunpack(arg)##9867
+		..turnin Murkblood Leaders...##9867
 	step //72
 		goto 71.6,40.5
 		.talk Harold Lane##18218
@@ -15006,7 +15006,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Outland (68-70)"
 		goto 75.3,60.9
 		.talk Leoroxx##22004
 		..turnin Understanding the Mok'Nathal##10846
-		..accept Since Time Forgottenunpack(arg)##10843
+		..accept Since Time Forgotten...##10843
 	step //33
 		goto 74.9,60.5
 		.talk Spiritcaller Dohgar##22312
@@ -15030,7 +15030,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Outland (68-70)"
 	step //38
 		goto 75.3,60.9
 		.talk Leoroxx##22004
-		..turnin Since Time Forgottenunpack(arg)##10843
+		..turnin Since Time Forgotten...##10843
 		..accept Slay the Brood Mother##10845
 	step //39
 		goto 74.9,60.5
@@ -15101,7 +15101,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Outland (68-70)"
 	step //52
 		goto 62,39.5
 		.talk Tree Warden Chawn##22007
-		..accept A Time for Negotiationunpack(arg)##10682
+		..accept A Time for Negotiation...##10682
 	step //53
 		goto 61.7,39.6
 		.talk Fhyn Leafshadow##22216
@@ -15173,8 +15173,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Outland (68-70)"
 	step //69
 		goto 62,39.5
 		.talk Tree Warden Chawn##22007
-		..turnin A Time for Negotiationunpack(arg)##10682
-		..accept unpack(arg)and a Time for Action##10713
+		..turnin A Time for Negotiation...##10682
+		..accept ...and a Time for Action##10713
 		.talk Samia Inkling##21983
 		..accept Poaching from Poachers##10717
 	step //70
@@ -15192,7 +15192,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Outland (68-70)"
 		..turnin Poaching from Poachers##10717
 		..accept Whelps of the Wyrmcult##10747
 		.talk Tree Warden Chawn##22007
-		..turnin unpack(arg)and a Time for Action##10713
+		..turnin ...and a Time for Action##10713
 		..turnin Did You Get The Note?##10719
 		..accept Wyrmskull Watcher##10894
 	step //72
@@ -16170,7 +16170,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (70-72
 		'Go into Warsong Hold to 41.3,53.6|goto 41.3,53.6
 		.talk Garrosh Hellscream##25237
 		..turnin Message to Hellscream##11616
-		..accept Reinforcements Incomingunpack(arg)##11618
+		..accept Reinforcements Incoming...##11618
 	step //24
 		'Go to the very top of Warsong Hold to 40.4,51.4|goto 40.4,51.4
 		.talk Turida Coldwind##25288
@@ -16183,7 +16183,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (70-72
 	step //26
 		'Go northwest outside to 38.1,52.6|goto 38.1,52.6
 		.talk Shadowstalker Ickoris##25437
-		..turnin Reinforcements Incomingunpack(arg)##11618
+		..turnin Reinforcements Incoming...##11618
 		..accept The Warsong Farms##11686
 	step //27
 		goto 37.9,52.6
@@ -16251,7 +16251,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (70-72
 		'Go outside to 43.7,54.5|goto 43.7,54.5
 		.talk Warden Nork Bloodfrenzy##25379
 		..turnin Nork Bloodfrenzy's Charge##11709
-		..accept Coward Deliveryunpack(arg) Under 30 Minutes or it's Free##11711
+		..accept Coward Delivery... Under 30 Minutes or it's Free##11711
 	step //42
 		goto 55.3,50.8
 		.' Standing at the crossroads and use your Warsong Flare Gun|use Warsong Flare Gun##34971
@@ -16259,7 +16259,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (70-72
 	step //43
 		goto 53.1,51.6
 		.talk Scout Tungok##25440
-		..turnin Coward Deliveryunpack(arg) Under 30 Minutes or it's Free##11711
+		..turnin Coward Delivery... Under 30 Minutes or it's Free##11711
 		..accept Vermin Extermination##11714
 	step //44
 		goto 52.1,52.5
@@ -16373,11 +16373,11 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (70-72
 		.talk Mobu##25475
 		..turnin Mobu's Pneumatic Tank Transjigamarig##11643
 		..turnin Super Strong Metal Plates!##11644
-		..accept Tanks a lotunpack(arg)##11651
+		..accept Tanks a lot...##11651
 	step //68
 		goto 32.2,54.1
 		.talk Gorge the Corpsegrinder##25329
-		..turnin Tanks a lotunpack(arg)##11651
+		..turnin Tanks a lot...##11651
 		..accept The Plains of Nasam##11652
 	step //69
 		goto 32.3,54.3
@@ -16499,7 +16499,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (70-72
 	step //93
 		goto 57,44
 		.talk Killinger the Den Watcher##25812
-		..accept Ned, Lord of Rhinosunpack(arg)##11884
+		..accept Ned, Lord of Rhinos...##11884
 	step //94
 		goto 56.8,44
 		.talk Zaza##25811
@@ -16536,7 +16536,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (70-72
 	step //101
 		goto 57,44
 		.talk Killinger the Den Watcher##25812
-		..turnin Ned, Lord of Rhinosunpack(arg)##11884
+		..turnin Ned, Lord of Rhinos...##11884
 	step //102
 		goto 56.8,44
 		.talk Zaza##25811
@@ -16577,14 +16577,14 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (70-72
 		goto 57.8,55.1
 		.talk Hierophant Liandra##25838
 		..turnin Not On Our Watch##11871
-		..accept The Nefarious Clam Masterunpack(arg)##11872
+		..accept The Nefarious Clam Master...##11872
 	step //111
 		goto 61.5,66.5
 		.kill 1 Clam Master K|q 11872/1|tip He's walking around underwater.
 	step //112
 		goto 57.3,44.1
 		.talk Hierophant Cenius##25810
-		..turnin The Nefarious Clam Masterunpack(arg)##11872
+		..turnin The Nefarious Clam Master...##11872
 	step //113
 		goto 56.8,44
 		.talk Zaza##25811
@@ -16833,7 +16833,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (70-72
 		.kill Coldarra Spellbinders|n
 		.get Scintillating Fragment|n
 		.' Click the Scintillating Fragment in your bags|use Scintillating Fragment##35648
-		..accept Puzzlingunpack(arg)##11941
+		..accept Puzzling...##11941
 	step //168
 		goto 28.3,28.5
 		.' Click the Coldarra Geological Monitor|tip It looks like a blue sphere on the ground at the base of the building.
@@ -16866,7 +16866,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (70-72
 		.talk Raelorasz##26117
 		..turnin Basic Training##11918
 		..accept Hatching a Plan##11936
-		..turnin Puzzlingunpack(arg)##11941
+		..turnin Puzzling...##11941
 		..accept The Cell##11943
 	step //175
 		goto 33.5,34.4
@@ -17504,7 +17504,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (70-72
 		goto 43.5,14
 		.talk King Mrgl-Mrgl##25197
 		..turnin The Spare Suit##11565
-		..accept Surrenderunpack(arg) Not!##11566
+		..accept Surrender... Not!##11566
 	step //324
 		'Go southwest to Winterfin Village|n
 		.' Use King Mrgl-Mrgl's Spare Suit|havebuff INV_Misc_Head_Murloc_01|use King Mrgl-Mrgl's Spare Suit##34620
@@ -17532,7 +17532,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (70-72
 	step //330
 		goto 43.5,14
 		.talk King Mrgl-Mrgl##25197
-		..turnin Surrenderunpack(arg) Not!##11566
+		..turnin Surrender... Not!##11566
 		..turnin Escape from the Winterfin Caverns##11570
 	step //331
 		goto 49.6,11.1
@@ -18218,7 +18218,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (72-74
 	step //118
 		goto 24.6,58.9
 		.talk Anuniaq##24810
-		..accept The Way to His Heartunpack(arg)##11472
+		..accept The Way to His Heart...##11472
 	step //119
 		goto 28.9,74.8
 		.' Use Anuniaq's Net on the Schools of Tasty Reef Fish|use Anuniaq's Net##40946|tip They look like swarms of fish in the water.
@@ -18324,7 +18324,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (72-74
 	step //141
 		goto 24.6,58.9
 		.talk Anuniaq##24810
-		..turnin The Way to His Heartunpack(arg)##11472
+		..turnin The Way to His Heart...##11472
 	step //142
 		'Go back across the Ancient Lift and north to 31.3,24.4|goto 31.3,24.4
 		.talk Longrunner Skycloud##24209
@@ -19448,11 +19448,11 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (74-76
 		goto 36.3,45.6
 		.talk Overlord Agmar##26379
 		..turnin Agmar's Hammer##12008
-		..accept Victory Nearsunpack(arg)##12034
+		..accept Victory Nears...##12034
 	step //50
 		goto 36.6,46.6
 		.talk Senior Sergeant Juktok##26415
-		..turnin Victory Nearsunpack(arg)##12034
+		..turnin Victory Nears...##12034
 		..accept From the Depths of Azjol-Nerub##12036
 	step //51
 		goto 36.6,47.2
@@ -19490,11 +19490,11 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (74-76
 		goto 37.1,48.6
 		.talk Soar Hawkfury##26504
 		..turnin Containing the Rot##12100
-		..accept The Good Doctorunpack(arg)##12101
+		..accept The Good Doctor...##12101
 	step //60
 		goto 36.1,48.9
 		.talk Doctor Sintar Malefious##26505
-		..turnin The Good Doctorunpack(arg)##12101
+		..turnin The Good Doctor...##12101
 		..accept In Search of the Ruby Lilac##12102
 	step //61
 		goto 36.6,47.2
@@ -20706,7 +20706,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (76-78
 	step //10
 		goto 73.9,34.1
 		.talk Kraz##26886
-		..accept It Takes Gutsunpack(arg).##12116
+		..accept It Takes Guts....##12116
 	step //11
 		goto 72.7,37.6
 		.kill Longhoof Grazers|n
@@ -20809,7 +20809,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (76-78
 	step //32
 		goto 73.9,34.1
 		.talk Kraz##26886
-		..turnin It Takes Gutsunpack(arg).##12116
+		..turnin It Takes Guts....##12116
 		..accept Drak'aguul's Mallet##12120
 	step //33
 		goto 73.8,34
@@ -21000,7 +21000,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (76-78
 		goto 65,47
 		.talk Prospector Rokar##27227
 		..turnin We Have the Power##12197
-		..accept unpack(arg) Or Maybe We Don't##12198
+		..accept ... Or Maybe We Don't##12198
 	step //73
 		goto 73.7,51.4
 		.' Use your Golem Control Unit|use Golem Control Unit##36936
@@ -21018,7 +21018,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (76-78
 	step //76
 		goto 65,47
 		.talk Prospector Rokar##27227
-		..turnin unpack(arg) Or Maybe We Don't##12198
+		..turnin ... Or Maybe We Don't##12198
 		..accept Bringing Down the Iron Thane##12199
 	step //77
 		'Go into this building and downstairs to 76.2,63.2|goto 76.2,63.2
@@ -21175,12 +21175,12 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (76-78
 		.' Collect 10 Hair Samples|goal 10 Hair Samples Collected|q 12630/1
 		.get Unliving Choker|n
 		.' Click the Unliving Choker in your |use Unliving Choker##38660
-		..accept An Invitation, of Sortsunpack(arg)##12631
+		..accept An Invitation, of Sorts...##12631
 	step //116
 		goto 14.1,73.8
 		.talk Stefan Vadu##28518
 		..turnin Kickin' Nass and Takin' Manes##12630
-		..turnin An Invitation, of Sortsunpack(arg)##12631
+		..turnin An Invitation, of Sorts...##12631
 		..accept Near Miss##12637
 	step //117
 		goto 14.3,74
@@ -23339,7 +23339,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (78-80
 	step //259
 		goto 65.4,60.2
 		.talk King Jokkum##30105
-		..accept Jormuttar is Soo Fatunpack(arg)##13011
+		..accept Jormuttar is Soo Fat...##13011
 	step //260
 		goto 69.7,58.9
 		.' Use your Diamond Tipped Pick on Dead Iron Giants|use Diamond Tipped Pick##42424
@@ -23416,7 +23416,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Northrend (78-80
 	step //275
 		goto 65.4,60.2
 		.talk King Jokkum##30105
-		..turnin Jormuttar is Soo Fatunpack(arg)##13011
+		..turnin Jormuttar is Soo Fat...##13011
 	step //276
 		goto 65.4,60.2
 		.talk King Jokkum##30105

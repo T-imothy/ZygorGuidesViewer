@@ -923,7 +923,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Howling Fjord\\Ka
 	step //1
 		goto Howling Fjord,24.6,58.9
 		.talk Anuniaq##24810
-		..accept The Way to His Heartunpack(arg)##11472|daily
+		..accept The Way to His Heart...##11472|daily
 	step //2
 		goto 28.9,74.8
 		.' Use Anuniaq's Net on the Schools of Tasty Reef Fish|use Anuniaq's Net##40946|tip They look like swarms of fish in the water.
@@ -938,7 +938,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Howling Fjord\\Ka
 	step //4
 		goto 24.6,58.9
 		.talk Anuniaq##24810
-		..turnin The Way to His Heartunpack(arg)##11472
+		..turnin The Way to His Heart...##11472
 ]])
 ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Icecrown\\Icecrown Full Zone Quest Path (Includes Regular Dailies Pre-Quests)",[[
 	author support@zygorguides.com
@@ -984,11 +984,11 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Icecrown\\Icecrow
 		goto 87.1,75.8
 		.talk Crusade Commander Entari##30223
 		..turnin Scourge Tactics##13008
-		..accept If There Are Survivorsunpack(arg)##13044
+		..accept If There Are Survivors...##13044
 	step //10
 		goto 87.0,79.0
 		.talk Penumbrius##30227
-		..turnin If There Are Survivorsunpack(arg)##13044
+		..turnin If There Are Survivors...##13044
 		..accept Into The Wild Green Yonder##13045
 	step //11
 		goto 87.1,79.1
@@ -1268,8 +1268,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Icecrown\\Icecrow
 		.' Point 3: 68.9,27.0
 		.'Find Orgrim's Hammer flying around in the sky|tip On you world map, it looks like a ship icon with 2 long red-ish ballons on either side of it.
 		..talk Sky-Reaver Korm Blackscar##30824
-		unpack(arg)turnin Orgrim's Hammer##13224
-		unpack(arg)accept The Broken Front##13228
+		...turnin Orgrim's Hammer##13224
+		...accept The Broken Front##13228
 	step //73
 		'On the Orgim's Hammer airship:
 		.talk Koltira Deathweaver##29795
@@ -1366,10 +1366,10 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Icecrown\\Icecrow
 		.' Point 3: 68.9,27.0
 		.'Find Orgrim's Hammer flying around in the sky|tip On you world map, it looks like a ship icon with 2 long red-ish ballons on either side of it.
 		..talk Sky-Reaver Korm Blackscar##30824
-		unpack(arg)turnin The Broken Front##13228
-		unpack(arg)turnin Avenge Me!##13230
-		unpack(arg)accept Good For Something?##13238
-		unpack(arg)accept Takes One to Know One##13260
+		...turnin The Broken Front##13228
+		...turnin Avenge Me!##13230
+		...accept Good For Something?##13238
+		...accept Takes One to Know One##13260
 	step //98
 		'On the Orgim's Hammer airship:
 		.talk Koltira Deathweaver##29795
@@ -1482,7 +1482,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Icecrown\\Icecrow
 		goto 44.1,24.7
 		.talk Baron Sliver##29804
 		..turnin It's All Fun and Games##12892
-		..accept I Have and Idea, But Firstunpack(arg)##12891
+		..accept I Have and Idea, But First...##12891
 	step //118
 		goto 43.7,24.8
 		.from Shadow Cultist##29717+
@@ -1496,7 +1496,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Icecrown\\Icecrow
 	step //119
 		goto 44.1,24.7
 		.talk Baron Sliver##29804
-		..turnin I Have and Idea, But Firstunpack(arg)##12891
+		..turnin I Have and Idea, But First...##12891
 		..accept Free Your Mind##12893
 	step //120
 		goto 43.4,19.1
@@ -2163,7 +2163,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Icecrown\\Icecrow
 		goto 19.5,48.2
 		.talk Lord-Commander Arete##29344
 		..turnin To the Rise with all Due Haste!##12806
-		..accept The Story Thus Farunpack(arg)##12807
+		..accept The Story Thus Far...##12807
 	step //257
 		goto 19.5,48.2
 		.talk Lord-Commander Arete##29344
@@ -2171,7 +2171,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Icecrown\\Icecrow
 	step //258
 		goto 19.5,48.2
 		.talk Lord-Commander Arete##29344
-		..turnin The Story Thus Farunpack(arg)##12807
+		..turnin The Story Thus Far...##12807
 		..accept Blood in the Water##12810
 	step //259
 		goto 19.7,48.4
@@ -4778,7 +4778,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Icecrown\\Crusade
 	step //
 		goto 30.2,58.3
 		.talk Hathvelion Sungaze##15920
-		..accept Fish Heads, Fish Headsunpack(arg)##8884
+		..accept Fish Heads, Fish Heads...##8884
 	step //
 		goto 27.3,57.2
 		.from Grimscale Forager##15670, Grimscale Seer##15950
@@ -4789,7 +4789,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Icecrown\\Crusade
 	step //
 		goto 30.2,58.3
 		.talk Hathvelion Sungaze##15920
-		..turnin Fish Heads, Fish Headsunpack(arg)##8884
+		..turnin Fish Heads, Fish Heads...##8884
 		..accept The Ring of Mmmrrrggglll##8885
 	step //
 		goto 25.3,67.2
@@ -5813,7 +5813,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Icecrown\\Crusade
 		goto 52.0,43.5
 		.talk Gar'Thok##3139
 		..turnin Vanquish the Betrayers##784
-		..accept From The Wreckageunpack(arg).##825
+		..accept From The Wreckage....##825
 		..turnin The Admiral's Orders##830
 		..accept The Admiral's Orders##831
 	step //
@@ -5831,7 +5831,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Icecrown\\Crusade
 	step //
 		goto 52.0,43.5
 		.talk Gar'Thok##3139
-		..turnin From The Wreckageunpack(arg).##825
+		..turnin From The Wreckage....##825
 	step //
 		goto 44.6,48.6
 		.kill 4 Razormane Quilboar|q 837/1
@@ -7701,12 +7701,12 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Sholazar Basin\\S
 		..turnin A Hero's Burden##12581
 		.' If you kill Zepik the Gorloc Hunter:
 		..talk Zepik the Gorloc Hunter##28668
-		unpack(arg)accept Frenzyheart Champion##12582 |daily
-		unpack(arg)accept Return of the Lich Hunter##12692
+		...accept Frenzyheart Champion##12582 |daily
+		...accept Return of the Lich Hunter##12692
 		.' If you kill Jaloot:
 		..talk Jaloot##28667
-		unpack(arg)accept Hand of the Oracles##12689 |daily
-		unpack(arg)accept Return of the Friendly Dryskin##12695
+		...accept Hand of the Oracles##12689 |daily
+		...accept Return of the Friendly Dryskin##12695
 	step //
 		goto 54.6,56.4
 		.talk High-Oracle Soo-say##28027
@@ -8513,7 +8513,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\The Storm Peaks\\
 	step //
 		goto 65.4,60.2
 		.talk King Jokkum##30105
-		..accept Jormuttar is Soo Fatunpack(arg)##13011
+		..accept Jormuttar is Soo Fat...##13011
 	step //
 		goto 69.7,58.9
 		.' Use your Diamond Tipped Pick on Dead Iron Giants|use Diamond Tipped Pick##42424
@@ -8590,7 +8590,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\The Storm Peaks\\
 	step //
 		goto 65.4,60.2
 		.talk King Jokkum##30105
-		..turnin Jormuttar is Soo Fatunpack(arg)##13011
+		..turnin Jormuttar is Soo Fat...##13011
 	step //
 		goto 65.4,60.2
 		.talk King Jokkum##30105
@@ -10954,7 +10954,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Netherdrake Mount
 	step //
 		goto 65.4,90.2
 		.talk Mistress of the Mines##23149
-		..accept Picking Up the Piecesunpack(arg)##11076
+		..accept Picking Up the Pieces...##11076
 	step //
 		'Go inside the mine to 65.1,87.5
 		.talk Dragonmaw Foreman##23376
@@ -10977,7 +10977,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Netherdrake Mount
 	step //
 		goto 65.4,90.2
 		.talk Mistress of the Mines##23149
-		..turnin Picking Up the Piecesunpack(arg)##11076
+		..turnin Picking Up the Pieces...##11076
 	step //
 		goto 66.0,86.5
 		.talk Yarzill the Merc##23141
@@ -11012,7 +11012,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Netherdrake Mount
 	step //
 		goto 65.9,87.2
 		.talk Ja'y Nosliw##22433
-		..accept Earning Your Wingsunpack(arg)##11063 |instant
+		..accept Earning Your Wings...##11063 |instant
 	step //
 		goto 65.2,85.7
 		.talk Murg "Oldie" Muckjaw##23340
@@ -11124,7 +11124,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Netherdrake Mount
 	step //
 		goto 65.4,90.2
 		.talk Mistress of the Mines##23149
-		..accept Picking Up the Piecesunpack(arg)##11076
+		..accept Picking Up the Pieces...##11076
 	step //
 		'Go inside the mine to 65.1,87.5
 		.talk Dragonmaw Foreman##23376
@@ -11147,7 +11147,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Netherdrake Mount
 	step //
 		goto 65.4,90.2
 		.talk Mistress of the Mines##23149
-		..turnin Picking Up the Piecesunpack(arg)##11076
+		..turnin Picking Up the Pieces...##11076
 	step //
 		goto Nagrand,12.7,38.9
 		.from Deathshadow Overlord##22393+, Deathshadow Warlock##22363+, Deathshadow Spellbinder##22342+, Deathshadow Archon##22343+, Deathshadow Acolyte##22341+
@@ -11194,7 +11194,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Netherdrake Mount
 		.from Arvoar the Rapacious##23267+ |tip He looks like a big Flayer mob that walks in a circle in this spot.
 		.collect Partially Digested Hand##32621 |n
 		.' Click the Partially Digested Hand in your bags |use Partially Digested Hand##32621
-		..accept A Job Unfinishedunpack(arg)##11041
+		..accept A Job Unfinished...##11041
 	step //
 		goto 70.2,84.3
 		.kill Barash the Den Mother |q 11041/2 |tip She looks like a big yellow Flayer mob that walks in a circle in this spot.
@@ -11204,7 +11204,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Netherdrake Mount
 	step //
 		goto 66.2,85.7
 		.talk Overlord Mor'ghor##23139
-		..turnin A Job Unfinishedunpack(arg)##11041
+		..turnin A Job Unfinished...##11041
 	step //
 		goto 56.3,59.6
 		.talk Arcanist Thelis##21955
@@ -11294,7 +11294,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Netherdrake Mount
 	step //
 		goto 65.4,90.2
 		.talk Mistress of the Mines##23149
-		..accept Picking Up the Piecesunpack(arg)##11076
+		..accept Picking Up the Pieces...##11076
 	step //
 		'Go inside the mine to 65.1,87.5
 		.talk Dragonmaw Foreman##23376
@@ -11317,7 +11317,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Netherdrake Mount
 	step //
 		goto 65.4,90.2
 		.talk Mistress of the Mines##23149
-		..turnin Picking Up the Piecesunpack(arg)##11076
+		..turnin Picking Up the Pieces...##11076
 	step //
 		goto Nagrand,12.7,38.9
 		.from Deathshadow Overlord##22393+, Deathshadow Warlock##22363+, Deathshadow Spellbinder##22342+, Deathshadow Archon##22343+, Deathshadow Acolyte##22341+
@@ -11785,7 +11785,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Events\\Love is i
 		goto 59.0,53.1
 		.talk Roka##38328
 		..turnin Hot On The Trail##24851
-		..accept A Friendly Chatunpack(arg)##24576
+		..accept A Friendly Chat...##24576
 	step //
 		'Go outside Orgrimmar |goto Durotar |noway |c
 	step //
@@ -11798,7 +11798,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Events\\Love is i
 	step //
 		goto Orgrimmar,50.7,65.8
 		.talk Detective Snap Snagglebolt##37172
-		..turnin A Friendly Chatunpack(arg)##24576
+		..turnin A Friendly Chat...##24576
 ]])
 ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Events\\Love is in the Air (February 7th - 20th)\\Love is in the Air Dailies",[[
 	author support@zygorguides.com
@@ -12784,7 +12784,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Events\\Children'
 		'Use your Orcish Orphan Whistle to summon your Orcish Orphan |use Orcish Orphan Whistle##18597
 		.talk Orcish Orphan##14444
 		..turnin Lordaeron Throne Room##1800
-		..accept You Scream, I Screamunpack(arg)##915
+		..accept You Scream, I Scream...##915
 		..accept Cairne's Hoofprint##925
 	step //15
 		'Go outside to Tirisfal Glades |goto Tirisfal Glades |noway |c
@@ -12800,7 +12800,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Events\\Children'
 	step //19
 		'Use your Orcish Orphan Whistle to summon your Orcish Orphan |use Orcish Orphan Whistle##18597
 		.talk Orcish Orphan##14444
-		..turnin You Scream, I Screamunpack(arg)##915
+		..turnin You Scream, I Scream...##915
 	step //20
 		goto Orgrimmar,45.1,63.9
 		.talk Doras##3310
@@ -12863,7 +12863,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Events\\Children'
 		'Use your Blood Elf Orphan Whistle to summon your Blood Elf Orphan |use Blood Elf Orphan Whistle##31880
 		.talk Blood Elf Orphan##22817
 		..turnin A Trip to the Dark Portal##10951
-		..accept Now, When I Grow Upunpack(arg)##11975
+		..accept Now, When I Grow Up...##11975
 		..accept Time to Visit the Caverns##10963
 	step //9
 		'Go through the Dark Portal to the Blasted Lands |goto Blasted Lands |noway |c
@@ -12916,7 +12916,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Events\\Children'
 	step //24
 		'Use your Blood Elf Orphan Whistle to summon your Blood Elf Orphan |use Blood Elf Orphan Whistle##31880
 		.talk Blood Elf Orphan##22817
-		..turnin Now, When I Grow Upunpack(arg)##11975
+		..turnin Now, When I Grow Up...##11975
 		..accept Back to the Orphanage##10967
 	step //25
 		goto Silvermoon City,49.4,14.8 |n

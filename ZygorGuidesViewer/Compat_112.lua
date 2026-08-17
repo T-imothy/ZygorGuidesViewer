@@ -2207,6 +2207,11 @@ end
 
 local function ZygorClassic_NormalizeQuestTitle170(title)
     title=tostring(title or "")
+    -- The original guide bundle contains literal ellipses inside quest names.
+    -- An old vararg compatibility pass accidentally rewrote some of them to
+    -- the visible text "unpack(arg)".  Restore the punctuation before every
+    -- title comparison so active, completed, and turned-in quests still match.
+    title=string.gsub(title,"unpack%(arg%)","...")
     title=string.gsub(title,"%s*%(%d+%)%s*$","")
     return title
 end
@@ -2249,6 +2254,10 @@ end
 
 local function ZygorClassic_CleanDirective62(line)
     if type(line)~="string" then return "" end
+    -- Repair the same ellipsis conversion at the directive boundary.  This
+    -- also covers damaged directive prefixes such as unpack(arg)accept and
+    -- keeps the player-facing step text free of the conversion artifact.
+    line=string.gsub(line,"unpack%(arg%)","...")
     line=string.gsub(line,"^%.+","")
     return line
 end
@@ -6588,22 +6597,44 @@ local function ZygorClassic_ItemCount197(itemID)
     if GetItemCount then
         local ok,count=pcall(GetItemCount,itemID)
         if ok and tonumber(count) then apiCount=tonumber(count) end
+        -- Several Vanilla clients accept item names but not numeric IDs here.
+        -- The name form also includes special containers such as the keyring
+        -- even when GetContainerNumSlots(-2) is not exposed by the client UI.
+        if GetItemInfo then
+            local infoOK,itemName=pcall(GetItemInfo,itemID)
+            if infoOK and itemName then
+                local nameOK,nameCount=pcall(GetItemCount,itemName)
+                if nameOK and tonumber(nameCount) and
+                   (not apiCount or tonumber(nameCount)>apiCount) then
+                    apiCount=tonumber(nameCount)
+                end
+            end
+        end
     end
     local total=0
     local bag
-    for bag=0,4 do
-        local slots=GetContainerNumSlots and (GetContainerNumSlots(bag) or 0) or 0
-        local slot
-        for slot=1,slots do
-            local link=GetContainerItemLink and GetContainerItemLink(bag,slot)
-            local found=nil
-            if link then
-                local startPos,endPos,captured=string.find(link,"item:(%d+)")
-                found=tonumber(captured)
+    -- Vanilla's keyring is container -2.  Skip -1 (the bank) so guide
+    -- inventory checks count carried keys and normal bags only.
+    for bag=-2,4 do
+        if bag~=-1 then
+            local slots=GetContainerNumSlots and (GetContainerNumSlots(bag) or 0) or 0
+            -- The 1.12 client exposes keyring capacity through a separate API;
+            -- GetContainerNumSlots(KEYRING_CONTAINER) commonly returns zero.
+            if bag==-2 and GetKeyRingSize then
+                slots=GetKeyRingSize() or slots
             end
-            if found==itemID then
-                local texture,count=GetContainerItemInfo(bag,slot)
-                total=total+(tonumber(count) or 1)
+            local slot
+            for slot=1,slots do
+                local link=GetContainerItemLink and GetContainerItemLink(bag,slot)
+                local found=nil
+                if link then
+                    local startPos,endPos,captured=string.find(link,"item:(%d+)")
+                    found=tonumber(captured)
+                end
+                if found==itemID then
+                    local texture,count=GetContainerItemInfo(bag,slot)
+                    total=total+(tonumber(count) or 1)
+                end
             end
         end
     end
@@ -6770,6 +6801,44 @@ local function ZygorClassic_ItemStartAccepted236(step,line,quests)
     return nil
 end
 
+-- TEST338: a completed same-step accept is durable proof that its preceding
+-- setup actions happened.  This is needed for item-started quests because the
+-- item is consumed before the resolver can poll inventory again (for example
+-- collect envelope -> use envelope -> accept quest).  Require every accept on
+-- the step so one accepted quest cannot hide another pending NPC offer.
+function ZygorClassic_SameStepAcceptProof338(step,quests)
+    if not step or not quests then return false,nil end
+    local sawAccept=false
+    local acceptedTitles=""
+    local i
+    for i=1,table.getn(step.source or {}) do
+        local source=tostring(step.source[i] or "")
+        local cleaned=ZygorClassic_CleanDirective62 and
+                      ZygorClassic_CleanDirective62(source) or source
+        local title,kind,questID=nil,nil,nil
+        if ZygorClassic_ParseQuestDirective then
+            title,kind,questID=ZygorClassic_ParseQuestDirective(cleaned)
+        end
+        if title and kind=="accept" then
+            sawAccept=true
+            local key=ZygorClassic_NormalizeQuestTitle170(title)
+            local live=quests[key]~=nil
+            local chainBlocked=ZygorClassic_ChainBarrier309 and
+                               ZygorClassic_ChainBarrier309(step,title,questID)
+            local durable=(questID and ZygorClassic_QuestIDTurnedIn216 and
+                           ZygorClassic_QuestIDTurnedIn216(questID)) or
+                          (not questID and ZygorClassic_TurnedIn62 and
+                           ZygorClassic_TurnedIn62(title))
+            if chainBlocked or (not live and not durable) then
+                return false,title
+            end
+            if acceptedTitles~="" then acceptedTitles=acceptedTitles..", " end
+            acceptedTitles=acceptedTitles..title
+        end
+    end
+    return sawAccept,acceptedTitles
+end
+
 -- TEST238: Vanilla exposes a reliable completion signal for flight-path steps:
 -- the current node in TAXIMAP_OPENED.  Store that node per character so an
 -- `fpath Name` directive remains resolved after the taxi window closes/reload.
@@ -6911,6 +6980,8 @@ local function ZygorClassic_StepState172(step,quests,guide,stepIndex)
     local acceptTitles={}
     local turninIDs={}
     local chainKeys={}
+    local sameStepAcceptProof=ZygorClassic_SameStepAcceptProof338 and
+                              ZygorClassic_SameStepAcceptProof338(step,quests)
     -- Collect instructions are inventory checkpoints, not necessarily quest
     -- leaderboard objectives. Read the preserved source metadata and verify
     -- the real item ID/count in the player's bags.
@@ -6939,7 +7010,7 @@ local function ZygorClassic_StepState172(step,quests,guide,stepIndex)
                 local ownerQuest=owner and quests[ZygorClassic_NormalizeQuestTitle170(owner)]
                 local consumedAndResolved=(ownerQuest and ownerQuest.complete) or
                     (owner and ZygorClassic_TurnedIn62 and ZygorClassic_TurnedIn62(owner))
-                if not consumedAndResolved then
+                if not consumedAndResolved and not sameStepAcceptProof then
                     return false,"collect item "..tostring(itemID)..": "..tostring(have).."/"..tostring(required)
                 end
             end
@@ -7286,13 +7357,32 @@ end
 
 local function ZygorClassic_ArrivalProof186(step)
     -- Only Zygor travel directives explicitly marked complete-on-arrival may
-    -- advance from proximity alone.
+    -- advance from proximity alone.  TEST334 also accepts an objective-free
+    -- travel step whose author supplied a goto but omitted |c.  StepState172
+    -- calls this function only for manual/travel steps, so quest actions cannot
+    -- be completed merely by walking near their waypoint.
     local marked=false
+    local implicitTravel=false
     local i
     for i=1,table.getn(step and step.source or {}) do
-        if string.find(step.source[i],"|c",1,true) then marked=true break end
+        local source=tostring(step.source[i] or "")
+        local lower=string.lower(source)
+        if string.find(source,"|c",1,true) then marked=true end
+        if string.find(lower,"|goto",1,true) and
+           (string.find(lower,"go ",1,true) or
+            string.find(lower,"inside",1,true) or
+            string.find(lower,"enter",1,true) or
+            string.find(lower,"leave",1,true) or
+            string.find(lower,"follow",1,true) or
+            string.find(lower,"travel",1,true) or
+            string.find(lower,"ride",1,true) or
+            string.find(lower,"fly",1,true) or
+            string.find(lower,"hearth",1,true) or
+            string.find(lower,"cross",1,true)) then
+            implicitTravel=true
+        end
     end
-    if not marked then return nil end
+    if not marked and not implicitTravel then return nil end
 
     -- TEST288: guide authors deliberately give hearth and other imprecise
     -- travel landings a wider fourth `goto` radius. Honor that source radius
@@ -7305,7 +7395,7 @@ local function ZygorClassic_ArrivalProof186(step)
     local way=p and p.ArrowFrame and p.ArrowFrame.waypoint
     if way and way.minimapFrame and Astrolabe and Astrolabe.GetDistanceToIcon then
         local dist=Astrolabe:GetDistanceToIcon(way.minimapFrame)
-        if dist and dist<=10 then return dist end
+        if dist and dist<=(implicitTravel and 15 or 10) then return dist end
     end
 
     -- Fallback for clients where Astrolabe cannot return a yard distance.
@@ -7315,7 +7405,9 @@ local function ZygorClassic_ArrivalProof186(step)
         local dx=x-px*100
         local dy=y-py*100
         local mapdist=math.sqrt(dx*dx+dy*dy)
-        if mapdist<=0.3 then return tostring(mapdist).."% map" end
+        if mapdist<=(implicitTravel and 0.75 or 0.3) then
+            return tostring(mapdist).."% map"
+        end
     end
     return nil
 end
@@ -9879,6 +9971,13 @@ function ZygorClassic_PlayerAction246(line,step,quests)
         end
         if objectiveDone then state="done" end
     end
+    -- Once all accepts on this step are proven, their prerequisite prose,
+    -- collect, and use rows are historical facts even if a consumed item is
+    -- no longer present. Keep explanatory `from` rows informational.
+    if state~="info" and ZygorClassic_SameStepAcceptProof338 and
+       ZygorClassic_SameStepAcceptProof338(step,quests) then
+        state="done"
+    end
     local interiorHint=npcIdText and ZygorClassicInteriorHints307[tonumber(npcIdText)] or nil
     if authoredTip and authoredTip~="" then
         display=display.." - "..authoredTip
@@ -12353,3 +12452,30 @@ if not ZygorClassicGnomeBoatMigration333 then
 end
 
 ZYGOR_BACKPORT_VERSION = "TEST333"
+
+-- TEST334: objective-free waypoint travel steps inherit the pointer's arrival
+-- radius even when the source guide omitted its explicit |c marker.
+ZYGOR_BACKPORT_VERSION = "TEST334"
+
+-- TEST335: include Vanilla's keyring in authoritative item-count checks so
+-- collected keys resolve guide objectives without counting bank contents.
+ZYGOR_BACKPORT_VERSION = "TEST335"
+
+-- TEST336: Vanilla GetItemCount may require an item name rather than an ID;
+-- use that path to count keys in clients whose keyring cannot be enumerated.
+ZYGOR_BACKPORT_VERSION = "TEST336"
+
+-- TEST337: enumerate KEYRING_CONTAINER with Vanilla's GetKeyRingSize API.
+ZYGOR_BACKPORT_VERSION = "TEST337"
+
+-- TEST338: accepted item-started quests resolve their consumed same-step
+-- collect/use prerequisites without weakening partial multi-accept steps.
+ZYGOR_BACKPORT_VERSION = "TEST338"
+
+-- TEST339: restore ellipses corrupted by the historic vararg conversion in
+-- guide directives and quest titles before parsing, display, and matching.
+ZYGOR_BACKPORT_VERSION = "TEST339"
+
+-- TEST340: route The Admiral's Orders (2) to its Vanilla recipient Nazgrel
+-- instead of the neighboring Vol'jin waypoint in both Horde starter guides.
+ZYGOR_BACKPORT_VERSION = "TEST340"

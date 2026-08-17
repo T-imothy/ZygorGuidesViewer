@@ -1,29 +1,48 @@
-# Zygor Guides Viewer — Classic Backport
+# Zygor Guides Viewer — Classic 1.12 Backport
 
-Private development repository for the World of Warcraft 1.12.1 backport of Zygor Guides Viewer.
+A compatibility backport of Zygor Guides Viewer for the original World of Warcraft 1.12.1 client. The project adapts the guide engine, navigation, quest tracking, and interface to Vanilla-era Lua and APIs.
 
-## Status
+> **Development preview:** the backport is actively tested and is not yet considered a finished release. Expect guide-data corrections and compatibility updates as more routes are played through.
 
-This project is under active development and testing. It is not ready for public release.
+## Compatibility
 
-- Client: World of Warcraft 1.12.1
-- Interface: `11200`
-- Current packaged build: `TEST332`
-- AddOn folder: `ZygorGuidesViewer`
+- World of Warcraft client: `1.12.1`
+- AddOn interface: `11200`
+- Current development build: `TEST340`
+- Installation folder: `ZygorGuidesViewer`
 
-## Current testing focus
+## Features
 
-- Guide and step progression
-- Quest-state detection and chained quests
-- Waypoints, route handoffs, maps, and minimap markers
-- Tooltip quest assistance
-- Hearthstone, flight-path, boat, tram, portal, and zone-transition handling
-- Legacy Lua compatibility and runtime performance
+- Compact, resizable guide window with manual and automatic step modes
+- Quest acceptance, completion, turn-in, item, kill, and exploration tracking
+- On-screen directional arrow with distance and arrival feedback
+- World-map and minimap waypoints, route dots, and quest-objective markers
+- Quest-assistance details in unit and object tooltips
+- Travel handoffs for hearthstones, flight paths, boats, trams, portals, and zone transitions
+- Guide selection for Alliance and Horde leveling routes
+- Built-in diagnostics for guide state, quest matching, waypoints, and route troubleshooting
+- Single-folder packaging of the legacy libraries required by the backport
 
 ## Installation
 
-Copy the `ZygorGuidesViewer` folder into `Interface/AddOns`, enable it at character selection, and reload or restart the client.
+1. Download or clone this repository.
+2. Copy the `ZygorGuidesViewer` folder into your game installation at `Interface/AddOns`.
+3. Enable **Zygor Guides Viewer** from the AddOns list at character selection.
+4. Restart the client or reload the user interface.
 
-## Notice
+Use `/zygor` in chat to show or hide the guide window. The **Guide**, **Help**, and **Diag** buttons provide guide selection, usage information, and troubleshooting details.
 
-This repository is a private development workspace. Do not distribute or publish its contents without first reviewing the original project licensing and included guide data.
+## Reporting a problem
+
+Useful reports include:
+
+- the guide name and step number;
+- character race, class, and level;
+- what the step expected and what happened instead;
+- a screenshot with the diagnostics window visible when possible.
+
+The starter routes and travel transitions receive the most testing, but the complete guide collection still needs broader playthrough coverage.
+
+## Attribution and content notice
+
+This repository is a compatibility and preservation-oriented backport. Zygor, World of Warcraft, and related names and assets belong to their respective owners. Guide text and bundled legacy components may retain their original authorship and licensing terms; review those terms before redistributing or repackaging the project.
