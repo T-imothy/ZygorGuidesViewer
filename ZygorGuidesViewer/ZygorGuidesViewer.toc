@@ -13,9 +13,11 @@
 ## X-Category: 
 ## X-Credits: 
 ## X-eMail: zygor@zygorguides.com
-## X-Website: http://zygorguides.com/
+## X-Website: https://github.com/T-imothy/ZygorGuidesViewer
+## X-Repository: https://github.com/T-imothy/ZygorGuidesViewer
+## X-Update-Method: Mantech launcher catalog
 ## X-License: GPL
-## Version: 2.0-classic-backport-test340-single-addon-package
+## Version: 2.0-classic-backport-test343-single-addon-package
 Generated_Vanilla_Manifest.lua
 Generated_Talk_Waypoints.lua
 Compat_112.lua

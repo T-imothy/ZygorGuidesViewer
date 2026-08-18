@@ -8,7 +8,11 @@ A compatibility backport of Zygor Guides Viewer for the original World of Warcra
 
 - World of Warcraft client: `1.12.1`
 - AddOn interface: `11200`
-- Current development build: `TEST340`
+- Current development build: `TEST343`
+- Updates are checked and installed by the external addon launcher. The WoW
+  1.12 addon sandbox cannot contact GitHub directly.
+- The technical diagnostics workspace is hidden at login and opens only from
+  the compact guide window's **Diag** button.
 - Installation folder: `ZygorGuidesViewer`
 
 ## Features

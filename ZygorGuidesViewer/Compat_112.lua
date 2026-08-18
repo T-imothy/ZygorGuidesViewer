@@ -248,6 +248,14 @@ if not ZygorClassicFrameBinder then
     ZygorClassicFrameBinder:SetScript("OnEvent", function()
         if ZygorGuidesViewer and ZygorGuidesViewerFrame then
             ZygorGuidesViewer.Frame = ZygorGuidesViewerFrame
+            -- The original viewer persists a generic `visible` flag and uses it
+            -- to reopen this large backport diagnostics workspace on startup.
+            -- The compact player guide is the normal UI now, so diagnostics are
+            -- deliberately opt-in through its Diag button.
+            ZygorGuidesViewerFrame:Hide()
+            if ZygorGuidesViewer.db and ZygorGuidesViewer.db.profile then
+                ZygorGuidesViewer.db.profile.visible = false
+            end
             if DEFAULT_CHAT_FRAME then
                 DEFAULT_CHAT_FRAME:AddMessage("Zygor: viewer frame bound.")
             end
@@ -1119,14 +1127,68 @@ local function ZygorClassic_CharacterKey()
     return tostring(realm) .. ":" .. tostring(name)
 end
 
+-- Return the furthest trustworthy checkpoint recorded by any generation of
+-- the backport.  Older packages wrote characters/smart51 while the current
+-- state machine writes engine172.  Treating a missing newest record as a new
+-- character loses real progress and lets quest-log bootstrap rewind the guide.
+local function ZygorClassic_SavedCheckpoint342(key)
+    if not ZygorClassicDB then return nil,nil end
+    local candidates={}
+    if type(ZygorClassicDB.engine172)=="table" then
+        table.insert(candidates,ZygorClassicDB.engine172[key])
+    end
+    if type(ZygorClassicDB.smart51)=="table" then
+        table.insert(candidates,ZygorClassicDB.smart51[key])
+    end
+    if type(ZygorClassicDB.characters)=="table" then
+        table.insert(candidates,ZygorClassicDB.characters[key])
+    end
+
+    local bestGuide,bestStep=nil,nil
+    local i
+    for i=1,table.getn(candidates) do
+        local candidate=candidates[i]
+        local guide=candidate and tonumber(candidate.guide)
+        local step=candidate and tonumber(candidate.step)
+        if guide and guide>0 and step and step>0 then
+            if not bestGuide then
+                bestGuide,bestStep=guide,step
+            elseif guide==bestGuide and step>bestStep then
+                bestStep=step
+            end
+        end
+    end
+    return bestGuide,bestStep
+end
+
 local function ZygorClassic_CharDB()
+    -- SavedVariables from older revisions may restore ZygorClassicDB without
+    -- the per-character subtable after this file's initial defaults run.
+    -- Repair the shape at the point of use so login and reload are safe.
+    ZygorClassicDB = ZygorClassicDB or {}
+    if type(ZygorClassicDB.characters) ~= "table" then
+        ZygorClassicDB.characters = {}
+    end
     local key = ZygorClassic_CharacterKey()
     if not ZygorClassicDB.characters[key] then
+        local savedGuide,savedStep=ZygorClassic_SavedCheckpoint342(key)
         ZygorClassicDB.characters[key] = {
-            guide = nil,
-            step = nil,
+            guide = savedGuide,
+            step = savedStep,
             seenQuests = {}
         }
+    else
+        -- Fill a partially migrated record, and recover a later same-guide
+        -- checkpoint if an older renderer saved more recently than this table.
+        local char=ZygorClassicDB.characters[key]
+        local savedGuide,savedStep=ZygorClassic_SavedCheckpoint342(key)
+        if savedGuide and savedStep and
+           (not tonumber(char.guide) or not tonumber(char.step) or
+            (tonumber(char.guide)==savedGuide and savedStep>tonumber(char.step))) then
+            char.guide=savedGuide
+            char.step=savedStep
+        end
+        char.seenQuests=char.seenQuests or {}
     end
     return ZygorClassicDB.characters[key]
 end
@@ -8395,16 +8457,39 @@ if not ZygorStateMachine172 then
                     guide=ZygorGuidesViewer.registeredguides[state.guide]
                     if not guide or not ZygorClassic_EnsureParsed(guide) then return end
             elseif expected then
-                    startupGuideChanged188=true
-                    ZygorClassicGuideIndex=expected
-                    ZygorClassicStepIndex=1
-                    guide=ZygorGuidesViewer.registeredguides[expected]
-                    if not guide or not ZygorClassic_EnsureParsed(guide) then return end
-                    state={guide=expected,step=ZygorClassic_Bootstrap172(guide,quests)}
-                    ZygorClassicDB.engine172[key]=state
-                    if ZygorClassicDebug82 then
-                        ZygorClassicDebug82.route="startup guide -> "..tostring(expected)..
-                            " ("..tostring(expectedTitle)..")"
+                    local savedGuide,savedStep=ZygorClassic_SavedCheckpoint342(key)
+                    if savedGuide and savedStep and
+                       ZygorGuidesViewer.registeredguides[savedGuide] then
+                        startupGuideChanged188=true
+                        ZygorClassicGuideIndex=savedGuide
+                        ZygorClassicStepIndex=savedStep
+                        guide=ZygorGuidesViewer.registeredguides[savedGuide]
+                        if not guide or not ZygorClassic_EnsureParsed(guide) then return end
+                        state={
+                            guide=savedGuide,
+                            step=savedStep,
+                            recoveryFloor218=savedStep,
+                            objectiveOwnerRevision229="TEST229",
+                            objectiveSlotRevision230="TEST230",
+                            exactChainRevision231="TEST231"
+                        }
+                        ZygorClassicDB.engine172[key]=state
+                        if ZygorClassicDebug82 then
+                            ZygorClassicDebug82.route="restored saved checkpoint -> G"..
+                                tostring(savedGuide).." S"..tostring(savedStep).." (TEST342)"
+                        end
+                    else
+                        startupGuideChanged188=true
+                        ZygorClassicGuideIndex=expected
+                        ZygorClassicStepIndex=1
+                        guide=ZygorGuidesViewer.registeredguides[expected]
+                        if not guide or not ZygorClassic_EnsureParsed(guide) then return end
+                        state={guide=expected,step=ZygorClassic_Bootstrap172(guide,quests)}
+                        ZygorClassicDB.engine172[key]=state
+                        if ZygorClassicDebug82 then
+                            ZygorClassicDebug82.route="startup guide -> "..tostring(expected)..
+                                " ("..tostring(expectedTitle)..")"
+                        end
                     end
             end
             ZygorStateMachine172.guideOwnerKey188=key
@@ -10776,7 +10861,8 @@ function ZygorClassic_CreateHelp252()
         "- Player UI is the compact everyday tracker. Drag its border area to move it.\n"..
         "- Arrow On/Off toggles the graphical pointer. Right-click Arrow to rebuild a stuck waypoint.\n"..
         "- Diagnostics opens the large technical panel. Use it only when a step or waypoint looks wrong; include it in a screenshot.\n"..
-        "- Reload UI reloads addon code without logging out. The minimap icon opens the guide interface.\n\n"..
+        "- Reload UI reloads addon code without logging out. The minimap icon opens the guide interface.\n"..
+        "- Addon updates are checked by the launcher; the Vanilla client cannot contact GitHub directly.\n\n"..
         "|cffaaaaaaTip: complete steps in guide order when possible. Manual navigation never changes your selected AUTO/MANUAL guide mode.|r"
     )
     ZygorClassicHelp252:Hide()
@@ -12479,3 +12565,32 @@ ZYGOR_BACKPORT_VERSION = "TEST339"
 -- TEST340: route The Admiral's Orders (2) to its Vanilla recipient Nazgrel
 -- instead of the neighboring Vol'jin waypoint in both Horde starter guides.
 ZYGOR_BACKPORT_VERSION = "TEST340"
+
+-- TEST341: harden per-character state initialization against legacy or
+-- partially migrated SavedVariables that do not contain the characters table.
+ZYGOR_BACKPORT_VERSION = "TEST341"
+
+-- TEST342: restore the furthest saved same-guide checkpoint across legacy and
+-- current state stores before quest-log bootstrap can rewind the character.
+ZYGOR_BACKPORT_VERSION = "TEST342"
+
+-- TEST343: keep the technical diagnostics workspace closed on every login.
+-- This late event owner runs after the legacy viewer has consumed its saved
+-- visibility setting.  It does not affect the compact player guide, and the
+-- Diag button can still explicitly toggle the workspace at any time.
+if not ZygorClassicDiagnosticsStartup343 then
+    ZygorClassicDiagnosticsStartup343 = CreateFrame(
+        "Frame", "ZygorClassicDiagnosticsStartup343", UIParent)
+    ZygorClassicDiagnosticsStartup343:RegisterEvent("PLAYER_ENTERING_WORLD")
+    ZygorClassicDiagnosticsStartup343:SetScript("OnEvent", function()
+        if ZygorGuidesViewerFrame then
+            ZygorGuidesViewerFrame:Hide()
+        end
+        if ZygorGuidesViewer and ZygorGuidesViewer.db and
+           ZygorGuidesViewer.db.profile then
+            ZygorGuidesViewer.db.profile.visible = false
+        end
+    end)
+end
+
+ZYGOR_BACKPORT_VERSION = "TEST343"
